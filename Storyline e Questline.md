@@ -176,13 +176,13 @@ Scena iniziale con personaggio neonato salvato dal eroe/maestro che lo salva nel
 
 
 
-Il personaggio si trova all'interno della casa del paladino a sistemare la casa del maestro, nel  rimettere le armi queste 
+Il personaggio si trova all'interno della casa del paladino a sistemare la casa del maestro, nel  rimettere le armi queste
 
 gli cadono per terra e nel risistemare trova una vecchia spada arrugginita e decide di provarla cominciando a sventolarla al
 
 &#x20;vento, in quel momento entra in stanza il maestro che lo vede impugnare la spada e lo rimprovera (in maniera molto burbera),
 
-dopo di che gli ricorda che il suo ruolo è quello di semplice scudiero e lo manda a fare svolgere delle compere (qui il 
+dopo di che gli ricorda che il suo ruolo è quello di semplice scudiero e lo manda a fare svolgere delle compere (qui il
 
 personaggio  si trova a dovere interagire con i vari negozi della citta).una volta svolto le attività richieste il personaggio
 
@@ -190,7 +190,7 @@ personaggio  si trova a dovere interagire con i vari negozi della citta).una vol
 
 &#x20;gilda degli eroi il maestro chiama a se il personaggio e lo iscrive alla gilda garantendo per lui e riconoscendo le sue buone
 
-&#x20;capacita (fine giorno),il mattino seguente prime Quest gilda aiutare la popolazione \*con vari lavoretti semplici ritrovare 
+&#x20;capacita (fine giorno),il mattino seguente prime Quest gilda aiutare la popolazione \*con vari lavoretti semplici ritrovare
 
 oggetti e raccogliere materiali per la popolazione(prima paga ).
 
@@ -200,41 +200,41 @@ oggetti e raccogliere materiali per la popolazione(prima paga ).
 
 
 
-La gilda ti affida la missione di ripulire la cantina della locanda dai ratti affiancandoti ad un altro npc(primo companion), 
+La gilda ti affida la missione di ripulire la cantina della locanda dai ratti affiancandoti ad un altro npc(primo companion),
 
-npc è pallido di viso con un aria molto spocchiosa e un carattere da nobile (viene dalle terre innevate a nord )scesi nelle 
+npc è pallido di viso con un aria molto spocchiosa e un carattere da nobile (viene dalle terre innevate a nord )scesi nelle
 
-cantine v fate strada tra i topi (circa 3 scontri) fino ad arrivare ad un buco nel  muro che vi trasporta verso l esterno del 
+cantine v fate strada tra i topi (circa 3 scontri) fino ad arrivare ad un buco nel  muro che vi trasporta verso l esterno del
 
 villaggio dove sentite un urlo e i ritrovate un carovaniere circondato da pipistrelli(i domandate come è possibile che le
 
 &#x20;creature della notte attacchino in pieno giorno), una vota sconfitti il carovaniere vi ringrazia e vi cede la mappa del mondo
 
-&#x20;(introduzione a gli spostamenti fuori dal villaggio, di rientro incappate  con un gruppo di membri della gilda che vi 
+&#x20;(introduzione a gli spostamenti fuori dal villaggio, di rientro incappate  con un gruppo di membri della gilda che vi
 
 scherniscono per il vostro rango (breve scontro a parole),fate rapporto alla gilda scortando il carovaniere che vi ringrazia
 
-&#x20;ancora per l aiuto ,si scopre che il carovaniere è un amico della proprietaria della locanda che per ringraziarvi ti farà 
+&#x20;ancora per l aiuto ,si scopre che il carovaniere è un amico della proprietaria della locanda che per ringraziarvi ti farà
 
 riposare li gratis tutte le volte che volete(dormire ripristina tutti hp). TIMESKIP 7 giorni durante una sessione di allenamento
 
-&#x20;con il tuo maestro che ti spiega punti di forza e debolezze dei vari nemici della zona(dividere nemici con barre della vita 
+&#x20;con il tuo maestro che ti spiega punti di forza e debolezze dei vari nemici della zona(dividere nemici con barre della vita
 
-di colori diversi max 3 colori rosso danni normali, blu danni magici, verde danni fuoco)venite raggiunti dal companion che vi 
+di colori diversi max 3 colori rosso danni normali, blu danni magici, verde danni fuoco)venite raggiunti dal companion che vi
 
-informa che il villaggio è sotto attacco da parte delle forze della notte(scelta classe dividerei in spada, scudo, magia e 
+informa che il villaggio è sotto attacco da parte delle forze della notte(scelta classe dividerei in spada, scudo, magia e
 
-incantesimi tutti questi sono trovabili nella casa del maestro che ti dirà di  scegliere il tuo equipaggiamento fino a questo 
+incantesimi tutti questi sono trovabili nella casa del maestro che ti dirà di  scegliere il tuo equipaggiamento fino a questo
 
-momento il personaggio combatte con una spada arrugginita e uno scudo di legno),dopo un incontro contro pipistrelli venite 
+momento il personaggio combatte con una spada arrugginita e uno scudo di legno),dopo un incontro contro pipistrelli venite
 
-raggiunti da cavalieri o orchi che vi sconfiggono per evitare la vostra morte il maestro decide di salvare te e il companion a 
+raggiunti da cavalieri o orchi che vi sconfiggono per evitare la vostra morte il maestro decide di salvare te e il companion a
 
-scapito della propria vita riuscendo prima di morire a respingere i nemici con una magia di fuoco, tornare alla gilda per 
+scapito della propria vita riuscendo prima di morire a respingere i nemici con una magia di fuoco, tornare alla gilda per
 
-concludere quest e riferire accaduto, la mattina seguente venite incaricati dalla gilda di dirigervi verso la capitale per 
+concludere quest e riferire accaduto, la mattina seguente venite incaricati dalla gilda di dirigervi verso la capitale per
 
-informare il generale del accaduto pima di partire ti viene dato il sigillo della gilda con il quale puoi ottenere 2 pozioni 
+informare il generale del accaduto pima di partire ti viene dato il sigillo della gilda con il quale puoi ottenere 2 pozioni
 
 per missione da gli alchimisti.
 
@@ -270,13 +270,13 @@ signora davanti al pozzo riempi secchi.
 
 
 
-In viaggio verso la capitale il party si imbatte in alcuni nemici (probabilmente gruppi di nemici scappati dall'attacco al 
+In viaggio verso la capitale il party si imbatte in alcuni nemici (probabilmente gruppi di nemici scappati dall'attacco al
 
 villaggio)una volta sconfitti troveranno una lettera che descrive il vero scopo dell'attacco che era quello di uccidere proprio
 
-&#x20;il maestro poiché si rivelerà essere uno dei fondatori della gilda nonché membro della squadra che aveva portato la pace 30 
+&#x20;il maestro poiché si rivelerà essere uno dei fondatori della gilda nonché membro della squadra che aveva portato la pace 30
 
-anni prima sconfiggendo il re delle tenebre con il suo team, arrivati alla capitale verrete bloccati fuori dalle mura da dei 
+anni prima sconfiggendo il re delle tenebre con il suo team, arrivati alla capitale verrete bloccati fuori dalle mura da dei
 
 soldati che vi intimeranno di arrendersi e vi porteranno alla caserma dove verrete interrogati dal generale (un uomo robusto
 
@@ -284,11 +284,11 @@ soldati che vi intimeranno di arrendersi e vi porteranno alla caserma dove verre
 
 &#x20;già sapeva che non eravate parte  del esercito della notte poiché aveva riconosciuto lo stemma della gilda ricordando che
 
-&#x20;in passato egli stesso era stato salvato da un eroe della gilda quando svolgeva il ruolo di semplice soldato durante una 
+&#x20;in passato egli stesso era stato salvato da un eroe della gilda quando svolgeva il ruolo di semplice soldato durante una
 
-ricognizione (descrivendovi l eroe non riconoscete nessuno con quelle caratteristiche),dopo di che per testare le vostre 
+ricognizione (descrivendovi l eroe non riconoscete nessuno con quelle caratteristiche),dopo di che per testare le vostre
 
-abilita vi spedirà in una missione, la prima missione sarà interagire con l apprendista stregone di corte e svolgere insieme 
+abilita vi spedirà in una missione, la prima missione sarà interagire con l apprendista stregone di corte e svolgere insieme
 
 a lui una missione di recupero oggetti nella torre distrutta(suddivisa su 4 piani con all'interno 2 scrigni uno nello scantinato
 
@@ -296,35 +296,35 @@ a lui una missione di recupero oggetti nella torre distrutta(suddivisa su 4 pian
 
 &#x20;verrete mandati a controllare una grotta (vicino al corso d’acqua sulla sinistra del villaggio sotto il castello) ritenuta
 
-&#x20;infestata dal villaggio vicino(circa 2 livelli)una volta ripulita vi verrà chiesto di riferire il successo al villaggio e al 
+&#x20;infestata dal villaggio vicino(circa 2 livelli)una volta ripulita vi verrà chiesto di riferire il successo al villaggio e al
 
 generale, dopo di che la prossima missione sarà quella di fornire supporto ad un piccolo contingente di guardi che si trova sotto
 
-&#x20;il villaggio principale ed infine come ultima missione verrete spediti nelle foreste a nord della capitale a sconfiggere il 
+&#x20;il villaggio principale ed infine come ultima missione verrete spediti nelle foreste a nord della capitale a sconfiggere il
 
-mostro dalla foresta, alla fine della missione scruterete la fortezza delle forze nemiche che si staglia davanti ad un zona 
+mostro dalla foresta, alla fine della missione scruterete la fortezza delle forze nemiche che si staglia davanti ad un zona
 
-putrida, a questo punto farete rapporto al generale che appreso della vicenda radunerà l esercito per conquistare il forte il tuo 
+putrida, a questo punto farete rapporto al generale che appreso della vicenda radunerà l esercito per conquistare il forte il tuo
 
-team chiede di poter partecipare alla battaglia, il generale decide di portarvi con se a patto che riusciate a sconfiggere alcune 
+team chiede di poter partecipare alla battaglia, il generale decide di portarvi con se a patto che riusciate a sconfiggere alcune
 
-unità da lui selezionate (alla fine di questi scontri lui stesso scenderà in battaglia per affrontarvi) finito lo sconto la 
+unità da lui selezionate (alla fine di questi scontri lui stesso scenderà in battaglia per affrontarvi) finito lo sconto la
 
-mattina seguente inizia l avanzata verso il forte nemico, qui inizierà la battaglia che dopo una serie di scontri vi vedrà 
+mattina seguente inizia l avanzata verso il forte nemico, qui inizierà la battaglia che dopo una serie di scontri vi vedrà
 
-cadere per la troppa forza nemica,verrete salvati dal generale e vi risveglierete alla capitale con molte ferite. Qui scoprite 
+cadere per la troppa forza nemica,verrete salvati dal generale e vi risveglierete alla capitale con molte ferite. Qui scoprite
 
-che i vostri armamenti sono distrutti e i generale vi indirizza verso il fabbro della citta sottostante per farvi riparare e 
+che i vostri armamenti sono distrutti e i generale vi indirizza verso il fabbro della citta sottostante per farvi riparare e
 
-potenziare gli armamenti tornati dal generale vi invierà a fare rapporto alla gilda, fatto rapporto verrete fatti salire di 
+potenziare gli armamenti tornati dal generale vi invierà a fare rapporto alla gilda, fatto rapporto verrete fatti salire di
 
-grado e una volta riposati alla locanda il mattino seguente tornerete a fare visita alla casa del maestro e scoprirete una 
+grado e una volta riposati alla locanda il mattino seguente tornerete a fare visita alla casa del maestro e scoprirete una
 
-lettera che parla del vostro allenamento sotto la sua ala protettiva indirizzato ad una persona che non conoscete facendo 
+lettera che parla del vostro allenamento sotto la sua ala protettiva indirizzato ad una persona che non conoscete facendo
 
-ritorno alla gilda per avere informazioni vi verrà affidato una altra missione che prevede il tornare un'altra volta alla capitale 
+ritorno alla gilda per avere informazioni vi verrà affidato una altra missione che prevede il tornare un'altra volta alla capitale
 
-stavolta no per parlare con il generale ma con il re in persona che dopo gli eventi dalla battaglia ha sentito parlare di voi dal 
+stavolta no per parlare con il generale ma con il re in persona che dopo gli eventi dalla battaglia ha sentito parlare di voi dal
 
 generale stesso come ottimi membri della gilda e degni di future imprese eroiche.
 
@@ -332,63 +332,63 @@ generale stesso come ottimi membri della gilda e degni di future imprese eroiche
 
 Arrivati al castello troverete il re intento a conferire con le alte schiere del regno tra cui ci sono il generale, lo stregone di
 
-&#x20;corte e il combattente che gestisce l'arena, dopo una breve discussione con il re verrete a scoprire che egli stesso è una dei 
+&#x20;corte e il combattente che gestisce l'arena, dopo una breve discussione con il re verrete a scoprire che egli stesso è una dei
 
 fondatori della gilda insieme al maestro del personaggio(racconta un po’ di storia sulla fondazione e sulle varie squadre che hanno
 
-&#x20;fondato la gilda facendo un riferimento alla squadra stessa del maestro e ha come alcuni suoi membri sono morti durante una 
+&#x20;fondato la gilda facendo un riferimento alla squadra stessa del maestro e ha come alcuni suoi membri sono morti durante una
 
 battaglia e a come un altro membro abbia tradito la gilda nascondendosi per evitare di essere giustiziato),dopo di che vi incaricherà
 
-&#x20;di trovare l ultimo membro della sua vecchia squadra  che si dice essere scomparso da qualche tempo dandoti come puto di partenza 
+&#x20;di trovare l ultimo membro della sua vecchia squadra  che si dice essere scomparso da qualche tempo dandoti come puto di partenza
 
 il villaggio a sud della capitale come punto di partenza, una volta scoperta l abitazione del npc scomparso in casa sua troverete un
 
-&#x20;ambiente mal tenuto e distrutto tra le macerie troverete un'altra lettera che riporta le iniziali della persona alla quale era 
+&#x20;ambiente mal tenuto e distrutto tra le macerie troverete un'altra lettera che riporta le iniziali della persona alla quale era
 
-indirizzata la lettera trovata a casa del maestro e mai spedita con indicazioni di un luogo dove incontrarsi (il luogo si scopre 
+indirizzata la lettera trovata a casa del maestro e mai spedita con indicazioni di un luogo dove incontrarsi (il luogo si scopre
 
 essere una grotta che si trova sulla via verso le zone innevate, arrivati sul punto dell'incontro troverete gli oggetti della persona
 
 &#x20;scomparsa e sarete assaliti da alcuni membri delle terre a nord, sconfitti vi immergete nella grotta fino ad arrivare all'uscita
 
-(in fondo alla grotta mini-boss) della grotta vi ritroverete davanti ad un lago sotterraneo con i mezzo una piccola zona di terra e 
+(in fondo alla grotta mini-boss) della grotta vi ritroverete davanti ad un lago sotterraneo con i mezzo una piccola zona di terra e
 
-sopra sci troverete la persona scomparsa una volta salvata farete ritorno alla capitale ,arrivati davanti alle esso vi ringrazierà 
+sopra sci troverete la persona scomparsa una volta salvata farete ritorno alla capitale ,arrivati davanti alle esso vi ringrazierà
 
-regalandovi una casa in città, dopo di che vedrete che il vecchio team del re si raduna per parlare tra di loro durante questa 
+regalandovi una casa in città, dopo di che vedrete che il vecchio team del re si raduna per parlare tra di loro durante questa
 
-conversazione sentirete dire il nome della persona ala quale era rivolta la lettera del vostro maestro,(durante la conversazione si 
+conversazione sentirete dire il nome della persona ala quale era rivolta la lettera del vostro maestro,(durante la conversazione si
 
-sentiranno solo poche parole come il nome, che era uno di noi e su un ipotetico tradimento e sulla sua presunta morte),incuriosito 
+sentiranno solo poche parole come il nome, che era uno di noi e su un ipotetico tradimento e sulla sua presunta morte),incuriosito
 
-dalle parole sentite tornate alla a fare rapporto alla gilda e ad avere informazioni,(giorni dopo )verrete richiamati alla capitale 
+dalle parole sentite tornate alla a fare rapporto alla gilda e ad avere informazioni,(giorni dopo )verrete richiamati alla capitale
 
-per scoprire che è in programma un nuovo attacco alla fortezza nemica con questa volta anche  la squadra del re, riuscite ad entrare 
+per scoprire che è in programma un nuovo attacco alla fortezza nemica con questa volta anche  la squadra del re, riuscite ad entrare
 
-dentro la città vi fate strada tra gruppi di nemici fino ad arrivare davanti al capo dei nemici che si trova su un trono, il suo 
+dentro la città vi fate strada tra gruppi di nemici fino ad arrivare davanti al capo dei nemici che si trova su un trono, il suo
 
-atteggiamento è molto calmo e sicuro senza nemmeno accorgertene il capo dei banditi stende tutto il tuo party fino a rimanere solo 
+atteggiamento è molto calmo e sicuro senza nemmeno accorgertene il capo dei banditi stende tutto il tuo party fino a rimanere solo
 
 con te qui ti spiega che non tutto è giusto ma serve per uno scopo, prima di colpirti vieni raggiuto dal generale che urla il tuo nome
 
-&#x20;in quel momento il capo dei nemici si ferma, prima che possa proferire parola arrivano anche i re e il suo team prima di svenire per 
+&#x20;in quel momento il capo dei nemici si ferma, prima che possa proferire parola arrivano anche i re e il suo team prima di svenire per
 
-lo sforzo fatto fino a quel momento riconosci qualcosa di familiare nel capo dei banditi poi ti accasci, una volta ripreso la battaglia 
+lo sforzo fatto fino a quel momento riconosci qualcosa di familiare nel capo dei banditi poi ti accasci, una volta ripreso la battaglia
 
-è stata vinta e il capo dei nemici morente ti cede una lettera(la lettera è scritta in una lingua a te incomprensibile quindi una 
+è stata vinta e il capo dei nemici morente ti cede una lettera(la lettera è scritta in una lingua a te incomprensibile quindi una
 
-volta fatto ritorno alla capitale come eroi tornate a fare rapporto alla gilda una volta li parlando con i membri del proprio team 
+volta fatto ritorno alla capitale come eroi tornate a fare rapporto alla gilda una volta li parlando con i membri del proprio team
 
-scopri che uno di loro conosce quei simboli e conosce qualcuno in grado di tradurli quindi parti per una spedizione alla ricerca di 
+scopri che uno di loro conosce quei simboli e conosce qualcuno in grado di tradurli quindi parti per una spedizione alla ricerca di
 
-questa persona fino a trovarla a guardare le rovine del forte nemico interagendo con questo npc scopri che si tratta dello zio del 
+questa persona fino a trovarla a guardare le rovine del forte nemico interagendo con questo npc scopri che si tratta dello zio del
 
 companion proveniente dalla zona innevata(scoprirai essere il companion anche del maestro e che quella lettera è scritta in un linguaggio
 
 &#x20;inventato tra i componenti del loro gruppo per non fare leggiere a nessuno lettere di vitale importanza)una volta tradotta la lettera
 
-&#x20;verrete attaccati dalla squadra del re che vuole quella lettera e riconosce nello zio del companion il traditore scappato della squadra 
+&#x20;verrete attaccati dalla squadra del re che vuole quella lettera e riconosce nello zio del companion il traditore scappato della squadra
 
 del maestro.
 
@@ -416,43 +416,46 @@ del maestro.
 |088 Shop unlocked I|traccia il completamento della quest secondaria dell'alchimista e l'attivazione del negozio con la stessa|
 |089 Alchimista quest tracker|Serve per prevenire la ripetizione del messaggio di fare rapporto all'alchimista due volte|
 |090 Cantina pulita|traccia l'eliminazione di tutti i topi per triggerare il crollo del muro e l'apertura del passaggio alla caverna|
-|091||
-|092||
-|093||
-|094||
-|095||
-|096||
-|097||
-|098||
-|099||
+|091 Caverna pulita|traccia l'eliminazione di tutti i topi per triggerare i suoni provenienti da fuori la caverna|
+|092 Locanda 2P unlocked free room|traccia l'introduzione alla locandiera da parte del mercante che rende riposare alla locanda gratuito per il giocatore e sblocca il secondo piano.|
+|093 Mercante arrivato in città|traccia l'arrivo del mercante in città, posizionando il carro vicino alla locanda dove successivamente potrai trovare il mercante itinerante|
+|094 Rats Quest (Repeatable)|traccia il completamento della quest ripetibile di uccidere X topi|
+|095 Bandit Quest (Repeatable)|traccia il completamento della quest ripetibile di uccidere X banditi|
+|096 Scheletri Quest (Repeatable)|traccia il completamento della quest ripetibile di uccidere X scheletri|
+|097 Mercante Salvato|traccia l'uccisione di tutti i banditi e il salvataggio con successo del mercante|
+|098 Risveglio nella stanza postQuest|serve per triggerare l'evento automatico che resetta le missioni ripetibile e lo scorrere dei giorni|
+|099 Primo risveglio nella stanza|serve per tracciare che il messaggio informativo del trascorrere dei giorni è stato mostrato al giocatore|
 |100||
 |101||
 |102||
 |103||
 |104||
 |105||
-
-
-
-&#x09;
-
-&#x09;
-
-&#x09;
-
-&#x09;
-
-&#x09;
-
-&#x09;
-
-&#x09;
-
-&#x09;
-
-&#x09;
-
-&#x09;
+|106||
+|107||
+|108||
+|109||
+|110||
+|111||
+|112||
+|113||
+|114||
+|115||
+|116||
+|117||
+|118||
+|119||
+|120||
+|121||
+|122||
+|123||
+|124||
+|125||
+|126||
+|127||
+|128||
+|129||
+|130||
 
 &#x09;
 
@@ -472,13 +475,13 @@ del maestro.
 |062 Alchimista quest progression|Incrementa da 0 a 6 fino al completamento di tutti gli step della quest dell'alchimista|
 |063 Guild commission quest progression|Incrementa da 0 a 7 fino al completamento di tutti gli step della quest della gilda|
 |064 Silvia helper quest progression|Incrementa da 0 a 5 fino al completamento di tutti gli step della quest di Silvia l'anziana del villaggio|
-|065 Rat Kills Maestro Quest \[1/3]|Incrementa da 0 a 5 fino all'uccisione di tutti i topi nella cantina|
-|066 Rat Kills Maestro Quest \[2/3]|Incrementa da 0 a 5 fino all'uccisione di tutti i topi nella caverna|
-|067 Bandits Kills Maestro Quest \[3/3]|Incrementa da 0 a 3 fino all'uccisione di tutti i banditi nel bosco|
-|068||
-|069||
-|070||
-|071||
+|065 Rats Kills Maestro Quest \[1/3]|Incrementa da 0 a 5 fino all'uccisione di tutti i topi nella cantina (finisce a 6 per evitare ripetizioni di eventi)|
+|066 Rats Kills Maestro Quest \[2/3]|Incrementa da 0 a 5 fino all'uccisione di tutti i topi nella caverna (finisce a 6 per evitare ripetizioni di eventi)|
+|067 Bandits Kills Maestro Quest \[3/3]|Incrementa da 0 a 3 fino all'uccisione di tutti i banditi nel bosco (finisce a 4 per evitare ripetizioni di eventi)|
+|068 Giorni al Raid|Incrementa da 0 a 7, conta i giorni trascorsi prima dell'attacco al villaggio|
+|069 Rats Kills (Repeatable)|Incrementa da 0 a X fino all'uccisione di tutti i topi necessari al completamento della quest di gilda|
+|070 Bandit Kills (Repeatable)|Incrementa da 0 a X fino all'uccisione di tutti i banditi necessari al completamento della quest di gilda|
+|071 Scheletri Kills (Repeatable)|Incrementa da 0 a X fino all'uccisione di tutti gli zombiee necessari al completamento della quest di gilda|
 |072||
 |073||
 |074||
