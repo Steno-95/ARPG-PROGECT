@@ -19,5 +19,5 @@ null,
 {"id":17,"expanded":true,"name":"template_enemies","order":18,"parentId":20,"scrollX":410.4,"scrollY":564.6},
 {"id":18,"expanded":true,"name":"template_skill","order":20,"parentId":20,"scrollX":440,"scrollY":338},
 {"id":19,"expanded":false,"name":"template_other","order":19,"parentId":20,"scrollX":786.6666666666666,"scrollY":548},
-{"id":20,"expanded":false,"name":"First map","order":17,"parentId":0,"scrollX":811.1999999999999,"scrollY":1129.2}
+{"id":20,"expanded":true,"name":"First map","order":17,"parentId":0,"scrollX":811.1999999999999,"scrollY":1129.2}
 ]
