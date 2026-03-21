@@ -510,6 +510,35 @@ del maestro.
 
 
 
+**--- TO DO LIST**
+
+* creare mappa per quest secondaria caccia ai ratti, 1 o 2 mappe 
+* creare mapper per quest secondaria caccia ai banditi, 1 o 2 mappe 
+* creare mappa per quest secondaria caccia ai non morti, 1 o 2 mappe 
+* configurare eventi per ciascuna mappa secondaria
+* configurare i vari diversi mostri nel database
+* configurare i template per i diversi mostri delle quest ripetibili.
+* configurare i template delle skill dei nuovi mostri se necessario.
+* \[Optional] configurare una variante mini-boss per le quest secondarie.
+* creare duplicato mappa del villaggio iniziale con redesign del livello per illustrare un raid nemico in
+corso.
+* configurare i template dei nuovi mostri per la mappa del raid.
+* configurare le skill dei nuovi mostri per la mappa del raid.
+* configurare gli eventi nella nuova mappa raid.
+* creare la catena di  evente e cutscene che porta dalla fine del raid all'inizio del capitolo 2.
+* creare la catena di eventi che porta dalla sezione della settimana di addestramento al raid del villaggio.
+* configurare la caverna sotto la locanda per cutscene di addestramento o un effetti combattimento dummy con il maestro o field object.
+* Nominare correttamente le nuove mappe, il bosco dove è attaccato il mercante e in caso riciclare alcune
+connessioni su quest'ultima per configurare l'accesso alle mappe delle quest secondarie
+* popolare il database con oggetti consumabili.
+* popolare il database con equipaggiamenti del personaggio.
+* popolare il database con le abilità del giocatore sbloccabili durante il primo capitolo.
+* Bilanciare la curva di esperienza del giocatore con le relative ricompense dall'uccisione dei mostri e
+il completamento delle varie quest.
+* creare qualche evento a giro per le mappe con random loots.
+* cercare free assets da usare per i nemici o crearne di nuovi, possibilmente con simile feeling agli assets di base.
+* creare qualche mostro nemico umanoide con il generatore di personaggi (tipo banditi, accoliti, stregoni)
+
 &#x09;
 
 &#x09;
