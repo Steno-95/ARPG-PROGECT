@@ -217,8 +217,8 @@ del maestro.
 | traccia il completamento della quest ripetibile di uccidere X banditi   |
 | 102 Scheletri Quest (Repeatable)                                        |                                                                                                                                                    |
 | traccia il completamento della quest ripetibile di uccidere X scheletri |
-| 103                                                                     |                                                                                                                                               |
-| 104                                                                     |                                                                                                                                               |
+| 103 Training 1                                                          | traccia il completamento della prima sessione di allenamento                                                                                       |
+| 104 Training 2                                                          | traccia il completamento della seconda sessione di allenamento                                                                                     |
 | 105                                                                     |                                                                                                                                               |
 | 106                                                                     |                                                                                                                                               |
 | 107                                                                     |                                                                                                                                               |
@@ -263,7 +263,7 @@ del maestro.
 | 069 Rats Kills (Repeatable)            | Incrementa da 0 a X fino all'uccisione di tutti i topi necessari al completamento della quest di gilda               |
 | 070 Bandit Kills (Repeatable)          | Incrementa da 0 a X fino all'uccisione di tutti i banditi necessari al completamento della quest di gilda            |
 | 071 Scheletri Kills (Repeatable)       | Incrementa da 0 a X fino all'uccisione di tutti gli zombiee necessari al completamento della quest di gilda          |
-| 072                                    |                                                                                                                 |
+| 072 Dummy distrutti                    | traccia il numero di dummy sconfitti per avanzare l'allenamento con il maestro                                       |
 | 073                                    |                                                                                                                 |
 | 074                                    |                                                                                                                 |
 | 075                                    |                                                                                                                 |
