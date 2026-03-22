@@ -171,61 +171,61 @@ del maestro.
 # -----------------------**INTERRUTTORI**
 
 
-| **NOME INTERRUTTORI**                                                   | **DEFINIZIONE SCOPO INTERRUTTORE**                                                                                                                 |
-|-------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| 081 Maschio                                                             | traccia che il giocatore ha scelto uno sprite maschio                                                                                              |
-| 082 Femmina                                                             | traccia che il giocatore ha scelto uno sprite femmina                                                                                              |
-| 083 sesso confermato                                                    | il giocatore ha confermato la scelta dello sprite e passa all'inserimento del nome.                                                                |
-| 084 Maestro Intro I                                                     | traccia che la cutscene di introduzione del maestro è stata completata nel primo capitolo                                                         |
-| 085 Maestro Intro II                                                    | traccia che l'introduzione alla gilda degli avventurieri è iniziata                                                                               |
-| 086 Maestro Intro III                                                   | traccia che l'introduzione alla gilda degli avventurieri è completata                                                                             |
-| 087 Maestro Intro IV                                                    | traccia che hai completato la prima missione di caccia da avventuriero                                                                             |
-| 088 Shop unlocked I                                                     | traccia il completamento della quest secondaria dell'alchimista e l'attivazione del negozio con la stessa                                          |
-| 089 Alchimista quest tracker                                            | Serve per prevenire la ripetizione del messaggio di fare rapporto all'alchimista due volte                                                         |
-| 090 Cantina pulita                                                      | traccia l'eliminazione di tutti i topi per triggerare il crollo del muro e l'apertura del passaggio alla caverna                                   |
-| 091 Caverna pulita                                                      | traccia l'eliminazione di tutti i topi per triggerare i suoni provenienti da fuori la caverna                                                      |
-| 092 Locanda 2P unlocked free room                                       | traccia l'introduzione alla locandiera da parte del mercante che rende riposare alla locanda gratuito per il giocatore e sblocca il secondo piano. |
-| 093 Mercante arrivato in città                                         | traccia l'arrivo del mercante in città, posizionando il carro vicino alla locanda dove successivamente potrai trovare il mercante itinerante      |
-| 094 Rats Quest preRaid                                                  | traccia il completamento della quest di uccidere X topi                                                                                            |
-| 095 Bandit Quest preRaid                                                | traccia il completamento della quest di uccidere X banditi                                                                                         |
-| 096 Scheletri Quest preRaid                                             | traccia il completamento della quest di uccidere X scheletri                                                                                       |
-| 097 Mercante Salvato                                                    | traccia l'uccisione di tutti i banditi e il salvataggio con successo del mercante                                                                  |
-| 098 Risveglio nella stanza postQuest                                    | serve per triggerare l'evento automatico che resetta le missioni ripetibile e lo scorrere dei giorni                                               |
-| 099 Primo risveglio nella stanza                                        | serve per tracciare che il messaggio informativo del trascorrere dei giorni è stato mostrato al giocatore                                         |
-| 100 Rats Quest (Repeatable)                                             |                                                                                                                                                    |
-| traccia il completamento della quest ripetibile di uccidere X topi      |
-| 101 Bandits Quest (Repeatable)                                          |                                                                                                                                                    |
-| traccia il completamento della quest ripetibile di uccidere X banditi   |
-| 102 Scheletri Quest (Repeatable)                                        |                                                                                                                                                    |
-| traccia il completamento della quest ripetibile di uccidere X scheletri |
-| 103 Training 1                                                          | traccia il completamento della prima sessione di allenamento                                                                                       |
-| 104 Training 2                                                          | traccia il completamento della seconda sessione di allenamento                                                                                     |
-| 105                                                                     |                                                                                                                                               |
-| 106                                                                     |                                                                                                                                               |
-| 107                                                                     |                                                                                                                                               |
-| 108                                                                     |                                                                                                                                               |
-| 109                                                                     |                                                                                                                                               |
-| 110                                                                     |                                                                                                                                               |
-| 111                                                                     |                                                                                                                                               |
-| 112                                                                     |                                                                                                                                               |
-| 113                                                                     |                                                                                                                                               |
-| 114                                                                     |                                                                                                                                               |
-| 115                                                                     |                                                                                                                                               |
-| 116                                                                     |                                                                                                                                               |
-| 117                                                                     |                                                                                                                                               |
-| 118                                                                     |                                                                                                                                               |
-| 119                                                                     |                                                                                                                                               |
-| 120                                                                     |                                                                                                                                               |
-| 121                                                                     |                                                                                                                                               |
-| 122                                                                     |                                                                                                                                               |
-| 123                                                                     |                                                                                                                                               |
-| 124                                                                     |                                                                                                                                               |
-| 125                                                                     |                                                                                                                                               |
-| 126                                                                     |                                                                                                                                               |
-| 127                                                                     |                                                                                                                                               |
-| 128                                                                     |                                                                                                                                               |
-| 129                                                                     |                                                                                                                                               |
-| 130                                                                     |                                                                                                                                               |
+| **NOME INTERRUTTORI**                                                    | **DEFINIZIONE SCOPO INTERRUTTORE**                                                                                                                 |
+|--------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| 081 Maschio                                                              | traccia che il giocatore ha scelto uno sprite maschio                                                                                              |
+| 082 Femmina                                                              | traccia che il giocatore ha scelto uno sprite femmina                                                                                              |
+| 083 sesso confermato                                                     | il giocatore ha confermato la scelta dello sprite e passa all'inserimento del nome.                                                                |
+| 084 Maestro Intro I                                                      | traccia che la cutscene di introduzione del maestro è stata completata nel primo capitolo                                                         |
+| 085 Maestro Intro II                                                     | traccia che l'introduzione alla gilda degli avventurieri è iniziata                                                                               |
+| 086 Maestro Intro III                                                    | traccia che l'introduzione alla gilda degli avventurieri è completata                                                                             |
+| 087 Maestro Intro IV                                                     | traccia che hai completato la prima missione di caccia da avventuriero                                                                             |
+| 088 Shop unlocked I                                                      | traccia il completamento della quest secondaria dell'alchimista e l'attivazione del negozio con la stessa                                          |
+| 089 Alchimista quest tracker                                             | Serve per prevenire la ripetizione del messaggio di fare rapporto all'alchimista due volte                                                         |
+| 090 Cantina pulita                                                       | traccia l'eliminazione di tutti i topi per triggerare il crollo del muro e l'apertura del passaggio alla caverna                                   |
+| 091 Caverna pulita                                                       | traccia l'eliminazione di tutti i topi per triggerare i suoni provenienti da fuori la caverna                                                      |
+| 092 Locanda 2P unlocked free room                                        | traccia l'introduzione alla locandiera da parte del mercante che rende riposare alla locanda gratuito per il giocatore e sblocca il secondo piano. |
+| 093 Mercante arrivato in città                                          | traccia l'arrivo del mercante in città, posizionando il carro vicino alla locanda dove successivamente potrai trovare il mercante itinerante      |
+| 094 Rats Quest preRaid                                                   | traccia il completamento della quest di uccidere X topi                                                                                            |
+| 095 Bandit Quest preRaid                                                 | traccia il completamento della quest di uccidere X banditi                                                                                         |
+| 096 Scheletri Quest preRaid                                              | traccia il completamento della quest di uccidere X scheletri                                                                                       |
+| 097 Mercante Salvato                                                     | traccia l'uccisione di tutti i banditi e il salvataggio con successo del mercante                                                                  |
+| 098 Risveglio nella stanza postQuest                                     | serve per triggerare l'evento automatico che resetta le missioni ripetibile e lo scorrere dei giorni                                               |
+| 099 Primo risveglio nella stanza                                         | serve per tracciare che il messaggio informativo del trascorrere dei giorni è stato mostrato al giocatore                                         |
+| 100 Rats Quest (Repeatable)                                              |                                                                                                                                                    |
+| traccia il completamento della quest ripetibile di uccidere X topi  |
+| 101 Bandits Quest (Repeatable)                                           |                                                                                                                                                    |
+| traccia il completamento della quest ripetibile di uccidere X banditi    |
+| 102 Scheletri Quest (Repeatable)                                         |                                                                                                                                                    |
+| traccia il completamento della quest ripetibile di uccidere X scheletri  |
+| 103 Training 1                                                           | traccia il completamento della prima sessione di allenamento                                                                                       |
+| 104 Training 2                                                           | traccia il completamento della seconda sessione di allenamento                                                                                     |
+| 105 Risveglio nella stanza postTraining                                  | serve per triggerare l'evento automatico che resetta le missioni ripetibili e lo scorrere dei giorni                                               |
+| 106                                                                      |                                                                                                                                               |
+| 107                                                                      |                                                                                                                                               |
+| 108                                                                      |                                                                                                                                               |
+| 109                                                                      |                                                                                                                                               |
+| 110                                                                      |                                                                                                                                               |
+| 111                                                                      |                                                                                                                                               |
+| 112                                                                      |                                                                                                                                               |
+| 113                                                                      |                                                                                                                                               |
+| 114                                                                      |                                                                                                                                               |
+| 115                                                                      |                                                                                                                                               |
+| 116                                                                      |                                                                                                                                               |
+| 117                                                                      |                                                                                                                                               |
+| 118                                                                      |                                                                                                                                               |
+| 119                                                                      |                                                                                                                                               |
+| 120                                                                      |                                                                                                                                               |
+| 121                                                                      |                                                                                                                                               |
+| 122                                                                      |                                                                                                                                               |
+| 123                                                                      |                                                                                                                                               |
+| 124                                                                      |                                                                                                                                               |
+| 125                                                                      |                                                                                                                                               |
+| 126                                                                      |                                                                                                                                               |
+| 127                                                                      |                                                                                                                                               |
+| 128                                                                      |                                                                                                                                               |
+| 129                                                                      |                                                                                                                                               |
+| 130                                                                      |                                                                                                                                               |
 
 
 ## -----------------**VARIABILI**
@@ -246,7 +246,7 @@ del maestro.
 | 071 Scheletri Kills (Repeatable)       | Incrementa da 0 a X fino all'uccisione di tutti gli zombiee necessari al completamento della quest di gilda          |
 | 072 Dummy distrutti                    | traccia il numero di dummy sconfitti per avanzare l'allenamento con il maestro                                       |
 | 073 Beast Kills Training               | traccia il numero di animali sconfitti per avanzare l'allenamento con il maestro                                     |
-| 074                                    |                                                                                                                 |
+| 074 Duello Maestro                     | traccia l'inizio e la fine del duello con il maestro nel terzo allenamento                                           |
 | 075                                    |                                                                                                                 |
 | 076                                    |                                                                                                                 |
 | 077                                    |                                                                                                                 |
