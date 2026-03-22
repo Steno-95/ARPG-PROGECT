@@ -8,65 +8,51 @@ che possono essere ottenute dal tabellone in caso di missioni secondarie o ripet
 direttamente dalla receptionist, in caso di successo della missione sarà necessario fare rapporto alla receptionist per  
 riscuotere la ricompensa.  
 Ti spiega che non ci sono disponibili missioni per il tuo rango e che ti merita provare con il cartellone o sentireil tuo maestro(Il maestro rifiuterà di  
- assegnarti la quest della cantina fino al completamento di tutte le quest secondarie sultabellone)
+assegnarti la quest della cantina fino al completamento di tutte le quest secondarie sultabellone)
 
 ## **QUEST SECONDARIE INIZIO**
 
-
 - Procura materiali di piante e i reagenti all'alchimista, sbloccherà l'abilità di acquistare pozioni dall'alchimista  
-e vendere materiali  
-
+e vendere materiali
 - Missione del magazziniere, ti viene richiesto dalla gilda di trasportare dei materiali e depositarli nel magazzino,  
 (Rendere interagibili 4-5 scatole o barili vuoti che una volta interagiti risulteranno riempiti, oppure spazi vuoti in  
-cui compare qualcosa)  
-
-- La vecchietta al pozzo ti chiede di aiutarla a procurarsi l'acqua dal pozzo e di innaffiare  
-
+cui compare qualcosa)
+- La vecchietta al pozzo ti chiede di aiutarla a procurarsi l'acqua dal pozzo e di innaffiare
 
 Maestro:
 
 - Ok ragazzo da oggi inizia il tuo addestramento, la tua prima vera missione sarà di ripulire la cantina della  
-locanda dai topi che l'hanno invasa  
-
+locanda dai topi che l'hanno invasa
 
 Il giocatore si dirige in cantina dove trova vari Mostri/Topi, una volta sconfitti si innesca l'evento che fa  
 crollare il muro e rivela l'ingresso a una caverna.  
 Nella caverna sono presenti altri Mostri/Topi e uno particolarmente grande che sarebbe il mini-boss dell'area,  
 sconfitto il mini-boss noterai l'uscita della caverna, una volta fuori sentirai dei rumori e troverai un mercante  
-sotto attacco da un gruppo di banditi.  
-
+sotto attacco da un gruppo di banditi.
 
 Salvato il mercante vi recate alla locanda per riscuotere, dove il mercante parlerà con la locandiera e ti sbloccherà il piano di sopra  
-e la possibilità di riposare gratuitamente.  
-
+e la possibilità di riposare gratuitamente.
 
 Il maestro ispeziona il percorso che hai fatto durante la missione e considera la caverna come spazio per i vostri  
-allenamento  
-
+allenamento
 
 ## Quest SECONDARIE PRE-TIMESKIP o TIMESKIP
 
-
--  Alcune missioni di caccia che ciascuna alla consegna scandisce il passaggio di un giorno risvegliandoti in una  
-stanza della locanda  
-
+- Alcune missioni di caccia che ciascuna alla consegna scandisce il passaggio di un giorno risvegliandoti in una  
+stanza della locanda
 - Durante un allenamento con il tuo maestro nella caverna sentite dei rumori provenire dalla locanda, vi apprestate di  
-corsa a vedere cosa succede e il villaggio è sotto attacco da un orda di mostri (goblin, zombie e arpie)  
-
+corsa a vedere cosa succede e il villaggio è sotto attacco da un orda di mostri (goblin, zombie e arpie)
 - combatti un orda di mostri finché i tuoi hp scendono a 0 (o in caso elimini tutti i mostri) a quel punto parte una  
 cutscene in cui ti accasci a terra esausto e il tuo maestro interviene a proteggerti, nel mentre fra le orde di nemici  
 si avanti una figura in armatura nera che duella con il tuo maestro e lo uccide anche se a caro prezzo, visto che sono  
-costretti a interrompere l'assalto e ritirarsi dal villaggio.  
-
+costretti a interrompere l'assalto e ritirarsi dal villaggio.
 
 Ti risvegli il giorno dopo nel letto della locanda dove corri di corsa al piano di sotto per aver aggiornamenti  
 sull'accaduto. La locandiera ti informerà ti quanto successo, che il tuo maestro è morto proteggendo te e il villaggio.  
-Ti verrà assegnato di fare rapporto alla capitale riguardo all'assalto subito dal villaggio  
-
+Ti verrà assegnato di fare rapporto alla capitale riguardo all'assalto subito dal villaggio
 
 Successivamente con la quest di recarti alla caserma della capitale il mercante ti stopperà un attimo per regalarvi  
-la mappa della zona per semplificare il viaggio in segno di ringraziamento  
-
+la mappa della zona per semplificare il viaggio in segno di ringraziamento
 
 ## **------------------------------STORYLINE---------------------------------------**
 
@@ -84,8 +70,7 @@ personaggio si trova a dovere interagire con i vari negozi della citta).una volt
 ritorna alla casa del maestro e non lo trova solo un biglietto con su scritto di recarsi alla gilda degli eroi, arrivati alla  
 gilda degli eroi il maestro chiama a se il personaggio e lo iscrive alla gilda garantendo per lui e riconoscendo le sue buone  
 capacita (fine giorno),il mattino seguente prime Quest gilda aiutare la popolazione \*con vari lavoretti semplici ritrovare  
-oggetti e raccogliere materiali per la popolazione(prima paga ).  
-
+oggetti e raccogliere materiali per la popolazione(prima paga ).
 
 ### **---- Prima Quest gilda**
 
@@ -107,8 +92,7 @@ raggiunti da cavalieri o orchi che vi sconfiggono per evitare la vostra morte il
 scapito della propria vita riuscendo prima di morire a respingere i nemici con una magia di fuoco, tornare alla gilda per  
 concludere quest e riferire accaduto, la mattina seguente venite incaricati dalla gilda di dirigervi verso la capitale per  
 informare il generale del accaduto pima di partire ti viene dato il sigillo della gilda con il quale puoi ottenere 2 pozioni  
-per missione da gli alchimisti.  
-
+per missione da gli alchimisti.
 
 ### **-- Npc nel livello**
 
@@ -118,8 +102,7 @@ per missione da gli alchimisti.
 - piano inferiore 2 locandiere 1 gilda circa 10 npc (6 seduti a tavola e 4 i piedi,6 che si muovono nel villaggio)
 
 \*Missioni aiutare persone max 3 persone che farei alchimista (trova pergamena nel negozio, consegna scorte al magazzino,  
-signora davanti al pozzo riempi secchi.  
-
+signora davanti al pozzo riempi secchi.
 
 ### **----PARTE 2**
 
@@ -151,8 +134,7 @@ grado e una volta riposati alla locanda il mattino seguente tornerete a fare vis
 lettera che parla del vostro allenamento sotto la sua ala protettiva indirizzato ad una persona che non conoscete facendo  
 ritorno alla gilda per avere informazioni vi verrà affidato una altra missione che prevede il tornare un'altra volta alla capitale  
 stavolta no per parlare con il generale ma con il re in persona che dopo gli eventi dalla battaglia ha sentito parlare di voi dal  
-generale stesso come ottimi membri della gilda e degni di future imprese eroiche.  
-
+generale stesso come ottimi membri della gilda e degni di future imprese eroiche.
 
 Arrivati al castello troverete il re intento a conferire con le alte schiere del regno tra cui ci sono il generale, lo stregone di  
 corte e il combattente che gestisce l'arena, dopo una breve discussione con il re verrete a scoprire che egli stesso è una dei  
@@ -184,8 +166,7 @@ questa persona fino a trovarla a guardare le rovine del forte nemico interagendo
 companion proveniente dalla zona innevata(scoprirai essere il companion anche del maestro e che quella lettera è scritta in un linguaggio  
 inventato tra i componenti del loro gruppo per non fare leggiere a nessuno lettere di vitale importanza)una volta tradotta la lettera  
 verrete attaccati dalla squadra del re che vuole quella lettera e riconosce nello zio del companion il traditore scappato della squadra  
-del maestro.  
-
+del maestro.
 
 # -----------------------**INTERRUTTORI**
 
@@ -264,7 +245,7 @@ del maestro.
 | 070 Bandit Kills (Repeatable)          | Incrementa da 0 a X fino all'uccisione di tutti i banditi necessari al completamento della quest di gilda            |
 | 071 Scheletri Kills (Repeatable)       | Incrementa da 0 a X fino all'uccisione di tutti gli zombiee necessari al completamento della quest di gilda          |
 | 072 Dummy distrutti                    | traccia il numero di dummy sconfitti per avanzare l'allenamento con il maestro                                       |
-| 073                                    |                                                                                                                 |
+| 073 Beast Kills Training               | traccia il numero di animali sconfitti per avanzare l'allenamento con il maestro                                     |
 | 074                                    |                                                                                                                 |
 | 075                                    |                                                                                                                 |
 | 076                                    |                                                                                                                 |
@@ -288,9 +269,9 @@ del maestro.
 | 094                                    |                                                                                                                 |
 
 
-## **  
+## \*\*
 
---- TO DO LIST**  
+--- TO DO LIST\*\*
 
 - creare mappa per quest secondaria caccia ai ratti, 1 o 2 mappe
 - creare mapper per quest secondaria caccia ai banditi, 1 o 2 mappe
