@@ -20,10 +20,10 @@ null,
 {"id":18,"expanded":true,"name":"template_skill","order":5,"parentId":20,"scrollX":440,"scrollY":338},
 {"id":19,"expanded":false,"name":"template_other","order":4,"parentId":20,"scrollX":817.1999999999999,"scrollY":1129.2},
 {"id":20,"expanded":true,"name":"First map","order":2,"parentId":1,"scrollX":811.1999999999999,"scrollY":1129.2},
-{"id":21,"expanded":true,"name":"cantina locanda (fine tutorial)","order":17,"parentId":12,"scrollX":737.4545454545455,"scrollY":1026.5454545454545},
-{"id":22,"expanded":false,"name":"QuestMap per Ripetibili Sunset Village","order":21,"parentId":1,"scrollX":0,"scrollY":0,"quick":false},
+{"id":21,"expanded":true,"name":"cantina locanda (fine tutorial)","order":17,"parentId":12,"scrollX":738,"scrollY":806.5714285714286},
+{"id":22,"expanded":true,"name":"QuestMap per Ripetibili Sunset Village","order":21,"parentId":1,"scrollX":583.7142857142857,"scrollY":806.5714285714286,"quick":false},
 {"id":23,"expanded":true,"name":"Rats Quest (Repeatable)","order":22,"parentId":22,"scrollX":0,"scrollY":0,"quick":false},
 {"id":24,"expanded":true,"name":"Bandits Quest (Repeatable)","order":23,"parentId":22,"scrollX":0,"scrollY":0,"quick":false},
 {"id":25,"expanded":false,"name":"Skeleton Quest (Repeatable)","order":24,"parentId":22,"scrollX":0,"scrollY":0,"quick":false},
-{"id":26,"expanded":true,"name":"Villaggio iniziale Raid","order":26,"parentId":1,"scrollX":816,"scrollY":800}
+{"id":26,"expanded":true,"name":"Villaggio iniziale Raid","order":26,"parentId":1,"scrollX":765.4285714285713,"scrollY":806.5714285714286}
 ]
