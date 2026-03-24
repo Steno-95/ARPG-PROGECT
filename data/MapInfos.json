@@ -25,5 +25,15 @@ null,
 {"id":23,"expanded":true,"name":"Rats Quest (Repeatable)","order":22,"parentId":22,"scrollX":0,"scrollY":0,"quick":false},
 {"id":24,"expanded":true,"name":"Bandits Quest (Repeatable)","order":23,"parentId":22,"scrollX":0,"scrollY":0,"quick":false},
 {"id":25,"expanded":false,"name":"Skeleton Quest (Repeatable)","order":24,"parentId":22,"scrollX":0,"scrollY":0,"quick":false},
-{"id":26,"expanded":true,"name":"Villaggio iniziale Raid","order":26,"parentId":1,"scrollX":778.2857142857142,"scrollY":806.5714285714286}
+{"id":26,"expanded":true,"name":"Villaggio iniziale Raid","order":26,"parentId":1,"scrollX":778.2857142857142,"scrollY":806.5714285714286},
+{"id":27,"expanded":true,"name":"zona transito quest ratti e cimitero","order":22,"parentId":22,"scrollX":579.4285714285714,"scrollY":806.5714285714286,"quick":false},
+{"id":28,"expanded":false,"name":"Grotta, interno 1","order":24,"parentId":23,"scrollX":860.5714285714286,"scrollY":820.2857142857142,"quick":false},
+{"id":29,"expanded":false,"name":"mausoleo","order":26,"parentId":25,"scrollX":1131,"scrollY":642,"quick":false},
+{"id":30,"expanded":true,"name":"Foresta","order":27,"parentId":22,"scrollX":848,"scrollY":624,"quick":false},
+{"id":31,"expanded":false,"name":"capanna capo bandiri","order":29,"parentId":24,"scrollX":0,"scrollY":0,"quick":false},
+{"id":32,"expanded":true,"name":"MAP032","order":32,"parentId":26,"scrollX":1131,"scrollY":642,"quick":false},
+{"id":33,"expanded":true,"name":"MAP033","order":33,"parentId":32,"scrollX":0,"scrollY":0,"quick":false},
+{"id":34,"expanded":true,"name":"MAP034","order":34,"parentId":33,"scrollX":0,"scrollY":0,"quick":false},
+{"id":35,"expanded":true,"name":"MAP035","order":36,"parentId":33,"scrollX":0,"scrollY":0,"quick":false},
+{"id":36,"expanded":true,"name":"MAP036","order":35,"parentId":34,"scrollX":0,"scrollY":0,"quick":false}
 ]
