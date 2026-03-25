@@ -165,8 +165,7 @@ scopri che uno di loro conosce quei simboli e conosce qualcuno in grado di tradu
 questa persona fino a trovarla a guardare le rovine del forte nemico interagendo con questo npc scopri che si tratta dello zio del  
 companion proveniente dalla zona innevata(scoprirai essere il companion anche del maestro e che quella lettera è scritta in un linguaggio  
 inventato tra i componenti del loro gruppo per non fare leggiere a nessuno lettere di vitale importanza)una volta tradotta la lettera  
-verrete attaccati dalla squadra del re che vuole quella lettera e riconosce nello zio del companion il traditore scappato della squadra  
-del maestro.
+verrete attaccati dalla squadra del re che vuole quella lettera e riconosce nello zio del companion il traditore scappato della squadra del maestro.
 
 # -----------------------**INTERRUTTORI**
 
@@ -238,8 +237,8 @@ del maestro.
 | 066 Rats Kills Maestro Quest [2/3]     | Incrementa da 0 a 5 fino all'uccisione di tutti i topi nella caverna (finisce a 6 per evitare ripetizioni di eventi) |
 | 067 Bandits Kills Maestro Quest [3/3]  | Incrementa da 0 a 3 fino all'uccisione di tutti i banditi nel bosco (finisce a 4 per evitare ripetizioni di eventi)  |
 | 068 Giorni al Raid                     | Incrementa da 0 a 7, conta i giorni trascorsi prima dell'attacco al villaggio                                        |
-| 069 Rats Kills (Repeatable)            | Incrementa da 0 a X fino all'uccisione di tutti i topi necessari al completamento della quest di gilda               |
-| 070 Bandit Kills (Repeatable)          | Incrementa da 0 a X fino all'uccisione di tutti i banditi necessari al completamento della quest di gilda            |
+| 069 Rats Kills (Repeatable)            | Incrementa da 0 a 19 fino all'uccisione di tutti i topi necessari al completamento della quest di gilda              |
+| 070 Bandit Kills (Repeatable)          | Incrementa da 0 a 20 fino all'uccisione di tutti i banditi necessari al completamento della quest di gilda           |
 | 071 Scheletri Kills (Repeatable)       | Incrementa da 0 a X fino all'uccisione di tutti gli zombiee necessari al completamento della quest di gilda          |
 | 072 Dummy distrutti                    | traccia il numero di dummy sconfitti per avanzare l'allenamento con il maestro                                       |
 | 073 Beast Kills Training               | traccia il numero di animali sconfitti per avanzare l'allenamento con il maestro                                     |
@@ -270,23 +269,18 @@ del maestro.
 
 --- TO DO LIST\*\*
 
-- creare mappa per quest secondaria caccia ai ratti, 1 o 2 mappe
-- creare mapper per quest secondaria caccia ai banditi, 1 o 2 mappe
-- creare mappa per quest secondaria caccia ai non morti, 1 o 2 mappe
-- configurare eventi per ciascuna mappa secondaria
-- configurare i vari diversi mostri nel database
+- configurare i vari diversi mostri nel database  
+
 - configurare i template per i diversi mostri delle quest ripetibili.
 - configurare i template delle skill dei nuovi mostri se necessario.
 - [Optional] configurare una variante mini-boss per le quest secondarie.
 - creare duplicato mappa del villaggio iniziale con redesign del livello per illustrare un raid nemico incorso.
-- configurare i template dei nuovi mostri per la mappa del raid.
-- configurare le skill dei nuovi mostri per la mappa del raid.
+- configurare le skill dei nuovi mostri per la mappa del raid.  
+
 - configurare gli eventi nella nuova mappa raid.
 - creare la catena di evente e cutscene che porta dalla fine del raid all'inizio del capitolo 2.
-- creare la catena di eventi che porta dalla sezione della settimana di addestramento al raid del villaggio.
-- configurare la caverna sotto la locanda per cutscene di addestramento o un effetti combattimento dummy con il maestro o field object.
-- Nominare correttamente le nuove mappe, il bosco dove è attaccato il mercante e in caso riciclare alcuneconnessioni su quest'ultima per configurare l'accesso alle mappe delle quest secondarie
-- popolare il database con oggetti consumabili.
+- popolare il database con oggetti consumabili.  
+
 - popolare il database con equipaggiamenti del personaggio.
 - popolare il database con le abilità del giocatore sbloccabili durante il primo capitolo.
 - Bilanciare la curva di esperienza del giocatore con le relative ricompense dall'uccisione dei mostri eil completamento delle varie quest.
@@ -295,5 +289,69 @@ del maestro.
 - creare qualche mostro nemico umanoide con il generatore di personaggi (tipo banditi, accoliti, stregoni)
 
 Le quest ripetibili, diverranno ripetibili solamente dopo il raid, primasarà necessario completarle una volta ciascuna e almeno due voltel'allenamento con il maestro, per un totale di 5 giorni.L'ordine non è importante.
+
+ 
+
+
+SCELTA ALLENAMENTO  
+
+SI:  
+Si. sono pronto  
+Entra di scatto "Sempronio" e comincia a dire:  
+
+- Grazie! Grazie davvero! 
+Il maestro risponde:
+
+
+- FUMETTO INTERROGATIVO
+- Chi è questo?..
+
+
+il giocatore:  
+
+- Maestro lui è \\n2,  ha fatto l'iscrizione insieme a me, mi ha chiesto se poteva unirsi a noi durante i nostri  
+allenamenti... è un problema?..
+
+
+Maestro:
+
+
+- No no, nessun problema, è sempre meglio allenarsi con qualcuno al proprio livello.
+- Rivolto a SEMPRONIO:
+- Potrei sbagliarmi, ma tu hai un volto familiare che per ora non riesco a identificare..
+
+
+ SEMPRONIO FUMETTO INTERROGATIVO e dialogo "...."  
+
+
+Maestro:
+
+
+- L'allenamento di oggi consiste nel distruggere tutti i fantocci che ho piazzato all'interno della caverna.
+
+
+ FINE ALLENAMENTO  
+Maestro:
+
+
+- Ottimo lavoro!   
+
+
+ Giocatore:  
+
+
+- Grazie maestro! sono stanco morto...
+
+
+ SEMPRO_NIO:
+
+
+- Si... Sono sempre più convinto di morire...
+
+Maestro:
+
+
+- Ci vediamo al prossimo allenamento, andate pure a riposarvi...
+
 
  
