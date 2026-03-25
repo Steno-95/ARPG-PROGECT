@@ -198,9 +198,9 @@ del maestro.
 | 103 Training 1                          | traccia il completamento della prima sessione di allenamento                                                                                       |
 | 104 Training 2                          | traccia il completamento della seconda sessione di allenamento                                                                                     |
 | 105 Risveglio nella stanza postTraining | serve per triggerare l'evento automatico che resetta le missioni ripetibili e lo scorrere dei giorni                                               |
-| 106                                     |                                                                                                                                               |
-| 107                                     |                                                                                                                                               |
-| 108                                     |                                                                                                                                               |
+| 106 Inizio Raid                         | traccia la fine del dialogo di arrivo in mappa e l'inizio dello spawn dei mostri durante il raid                                                   |
+| 107 Fine Raid                           | traccia il termine dei combattimenti durante il raid sia per time out o sconfitta dell'ultimo nemico e avvia la cutscene di fine capitolo          |
+| 108 Maestro Defeat                      | traccia la fine del duello nella cutscene per spawnare il corpo del maestro e del generale nemico                                                  |
 | 109                                     |                                                                                                                                               |
 | 110                                     |                                                                                                                                               |
 | 111                                     |                                                                                                                                               |
@@ -244,7 +244,7 @@ del maestro.
 | 072 Dummy distrutti                    | traccia il numero di dummy sconfitti per avanzare l'allenamento con il maestro                                       |
 | 073 Beast Kills Training               | traccia il numero di animali sconfitti per avanzare l'allenamento con il maestro                                     |
 | 074 Duello Maestro                     | traccia l'inizio e la fine del duello con il maestro nel terzo allenamento                                           |
-| 075                                    |                                                                                                                 |
+| 075 Raid Kills to Boss                 | incrementa da 0 a 13 fino all'uccisione di tutti i nemici presenti nel raid di fine capitolo                         |
 | 076                                    |                                                                                                                 |
 | 077                                    |                                                                                                                 |
 | 078                                    |                                                                                                                 |
