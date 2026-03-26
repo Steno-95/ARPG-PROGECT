@@ -191,9 +191,9 @@ verrete attaccati dalla squadra del re che vuole quella lettera e riconosce nell
 | 097 Mercante Salvato                    | traccia l'uccisione di tutti i banditi e il salvataggio con successo del mercante                                                                  |
 | 098 Risveglio nella stanza postQuest    | serve per triggerare l'evento automatico che resetta le missioni ripetibile e lo scorrere dei giorni                                               |
 | 099 Primo risveglio nella stanza        | serve per tracciare che il messaggio informativo del trascorrere dei giorni è stato mostrato al giocatore                                         |
-| 100 Rats Quest (Repeatable)             | traccia il completamento della quest ripetibile di uccide X topi                                                                                   |
-| 101 Bandits Quest (Repeatable)          | traccia il completamento della quest ripetibile di uccide X banditi                                                                                |
-| 102 Scheletri Quest (Repeatable)        | traccia il completamento della quest ripetibile di uccide X scheletri                                                                              |
+| 100 Rats Quest (Repeatable)             | traccia il completamento della quest ripetibile di uccide 19 topi                                                                                  |
+| 101 Bandits Quest (Repeatable)          | traccia il completamento della quest ripetibile di uccide 22 banditi                                                                               |
+| 102 Scheletri Quest (Repeatable)        | traccia il completamento della quest ripetibile di uccide 20 scheletri                                                                             |
 | 103 Training 1                          | traccia il completamento della prima sessione di allenamento                                                                                       |
 | 104 Training 2                          | traccia il completamento della seconda sessione di allenamento                                                                                     |
 | 105 Risveglio nella stanza postTraining | serve per triggerare l'evento automatico che resetta le missioni ripetibili e lo scorrere dei giorni                                               |
@@ -238,13 +238,13 @@ verrete attaccati dalla squadra del re che vuole quella lettera e riconosce nell
 | 067 Bandits Kills Maestro Quest [3/3]  | Incrementa da 0 a 3 fino all'uccisione di tutti i banditi nel bosco (finisce a 4 per evitare ripetizioni di eventi)  |
 | 068 Giorni al Raid                     | Incrementa da 0 a 7, conta i giorni trascorsi prima dell'attacco al villaggio                                        |
 | 069 Rats Kills (Repeatable)            | Incrementa da 0 a 19 fino all'uccisione di tutti i topi necessari al completamento della quest di gilda              |
-| 070 Bandit Kills (Repeatable)          | Incrementa da 0 a 20 fino all'uccisione di tutti i banditi necessari al completamento della quest di gilda           |
-| 071 Scheletri Kills (Repeatable)       | Incrementa da 0 a X fino all'uccisione di tutti gli zombiee necessari al completamento della quest di gilda          |
+| 070 Bandit Kills (Repeatable)          | Incrementa da 0 a 22 fino all'uccisione di tutti i banditi necessari al completamento della quest di gilda           |
+| 071 Scheletri Kills (Repeatable)       | Incrementa da 0 a 20 fino all'uccisione di tutti gli zombiee necessari al completamento della quest di gilda         |
 | 072 Dummy distrutti                    | traccia il numero di dummy sconfitti per avanzare l'allenamento con il maestro                                       |
 | 073 Beast Kills Training               | traccia il numero di animali sconfitti per avanzare l'allenamento con il maestro                                     |
 | 074 Duello Maestro                     | traccia l'inizio e la fine del duello con il maestro nel terzo allenamento                                           |
 | 075 Raid Kills to Boss                 | incrementa da 0 a 13 fino all'uccisione di tutti i nemici presenti nel raid di fine capitolo                         |
-| 076                                    |                                                                                                                 |
+| 076 Dialogo Allenamento                | tiene traccia delle fasi del dialogo dell'allenamento con "Sempronio"                                                |
 | 077                                    |                                                                                                                 |
 | 078                                    |                                                                                                                 |
 | 079                                    |                                                                                                                 |
@@ -269,18 +269,15 @@ verrete attaccati dalla squadra del re che vuole quella lettera e riconosce nell
 
 --- TO DO LIST\*\*
 
-- configurare i vari diversi mostri nel database  
-
+- configurare i vari diversi mostri nel database
 - configurare i template per i diversi mostri delle quest ripetibili.
 - configurare i template delle skill dei nuovi mostri se necessario.
 - [Optional] configurare una variante mini-boss per le quest secondarie.
 - creare duplicato mappa del villaggio iniziale con redesign del livello per illustrare un raid nemico incorso.
-- configurare le skill dei nuovi mostri per la mappa del raid.  
-
+- configurare le skill dei nuovi mostri per la mappa del raid.
 - configurare gli eventi nella nuova mappa raid.
 - creare la catena di evente e cutscene che porta dalla fine del raid all'inizio del capitolo 2.
-- popolare il database con oggetti consumabili.  
-
+- popolare il database con oggetti consumabili.
 - popolare il database con equipaggiamenti del personaggio.
 - popolare il database con le abilità del giocatore sbloccabili durante il primo capitolo.
 - Bilanciare la curva di esperienza del giocatore con le relative ricompense dall'uccisione dei mostri eil completamento delle varie quest.
@@ -290,68 +287,48 @@ verrete attaccati dalla squadra del re che vuole quella lettera e riconosce nell
 
 Le quest ripetibili, diverranno ripetibili solamente dopo il raid, primasarà necessario completarle una volta ciascuna e almeno due voltel'allenamento con il maestro, per un totale di 5 giorni.L'ordine non è importante.
 
- 
-
-
-SCELTA ALLENAMENTO  
+SCELTA ALLENAMENTO
 
 SI:  
 Si. sono pronto  
-Entra di scatto "Sempronio" e comincia a dire:  
+Entra di scatto "Sempronio" e comincia a dire:
 
-- Grazie! Grazie davvero! 
-Il maestro risponde:
-
-
+- Grazie! Grazie davvero!Il maestro risponde:
 - FUMETTO INTERROGATIVO
 - Chi è questo?..
 
-
-il giocatore:  
+il giocatore:
 
 - Maestro lui è \\n2,  ha fatto l'iscrizione insieme a me, mi ha chiesto se poteva unirsi a noi durante i nostri  
 allenamenti... è un problema?..
 
-
 Maestro:
-
 
 - No no, nessun problema, è sempre meglio allenarsi con qualcuno al proprio livello.
 - Rivolto a SEMPRONIO:
 - Potrei sbagliarmi, ma tu hai un volto familiare che per ora non riesco a identificare..
 
-
- SEMPRONIO FUMETTO INTERROGATIVO e dialogo "...."  
-
+SEMPRONIO FUMETTO INTERROGATIVO e dialogo "...."
 
 Maestro:
-
 
 - L'allenamento di oggi consiste nel distruggere tutti i fantocci che ho piazzato all'interno della caverna.
 
-
- FINE ALLENAMENTO  
+FINE ALLENAMENTO  
 Maestro:
 
+- Ottimo lavoro!
 
-- Ottimo lavoro!   
-
-
- Giocatore:  
-
+Giocatore:
 
 - Grazie maestro! sono stanco morto...
 
-
- SEMPRO_NIO:
-
+SEMPRO_NIO:
 
 - Si... Sono sempre più convinto di morire...
 
 Maestro:
 
-
 - Ci vediamo al prossimo allenamento, andate pure a riposarvi...
-
 
  
