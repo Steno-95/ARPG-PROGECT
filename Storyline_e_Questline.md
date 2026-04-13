@@ -106,6 +106,10 @@ signora davanti al pozzo riempi secchi.
 
 ### **----PARTE 2**
 
+
+-   
+
+
 In viaggio verso la capitale il party si imbatte in alcuni nemici (probabilmente gruppi di nemici scappati dall'attacco al  
 villaggio)una volta sconfitti troveranno una lettera che descrive il vero scopo dell'attacco che era quello di uccidere proprio  
 il maestro poiché si rivelerà essere uno dei fondatori della gilda nonché membro della squadra che aveva portato la pace 30  
@@ -127,7 +131,10 @@ putrida, a questo punto farete rapporto al generale che appreso della vicenda ra
 team chiede di poter partecipare alla battaglia, il generale decide di portarvi con se a patto che riusciate a sconfiggere alcune  
 unità da lui selezionate (alla fine di questi scontri lui stesso scenderà in battaglia per affrontarvi) finito lo sconto la  
 mattina seguente inizia l avanzata verso il forte nemico, qui inizierà la battaglia che dopo una serie di scontri vi vedrà  
-cadere per la troppa forza nemica,verrete salvati dal generale e vi risveglierete alla capitale con molte ferite. Qui scoprite  
+cadere per la troppa forza nemica,verrete salvati dal generale e vi risveglierete alla capitale con molte ferite. 
+
+
+Qui scoprite  
 che i vostri armamenti sono distrutti e i generale vi indirizza verso il fabbro della citta sottostante per farvi riparare e  
 potenziare gli armamenti tornati dal generale vi invierà a fare rapporto alla gilda, fatto rapporto verrete fatti salire di  
 grado e una volta riposati alla locanda il mattino seguente tornerete a fare visita alla casa del maestro e scoprirete una  
@@ -135,6 +142,10 @@ lettera che parla del vostro allenamento sotto la sua ala protettiva indirizzato
 ritorno alla gilda per avere informazioni vi verrà affidato una altra missione che prevede il tornare un'altra volta alla capitale  
 stavolta no per parlare con il generale ma con il re in persona che dopo gli eventi dalla battaglia ha sentito parlare di voi dal  
 generale stesso come ottimi membri della gilda e degni di future imprese eroiche.
+
+
+CAPITOLO 3
+
 
 Arrivati al castello troverete il re intento a conferire con le alte schiere del regno tra cui ci sono il generale, lo stregone di  
 corte e il combattente che gestisce l'arena, dopo una breve discussione con il re verrete a scoprire che egli stesso è una dei  
@@ -166,6 +177,9 @@ questa persona fino a trovarla a guardare le rovine del forte nemico interagendo
 companion proveniente dalla zona innevata(scoprirai essere il companion anche del maestro e che quella lettera è scritta in un linguaggio  
 inventato tra i componenti del loro gruppo per non fare leggiere a nessuno lettere di vitale importanza)una volta tradotta la lettera  
 verrete attaccati dalla squadra del re che vuole quella lettera e riconosce nello zio del companion il traditore scappato della squadra del maestro.
+
+
+CAPITOLO 4
 
 # -----------------------**INTERRUTTORI**
 
@@ -273,9 +287,7 @@ verrete attaccati dalla squadra del re che vuole quella lettera e riconosce nell
 - configurare i template per i diversi mostri delle quest ripetibili.
 - configurare i template delle skill dei nuovi mostri se necessario.
 - [Optional] configurare una variante mini-boss per le quest secondarie.
-- creare duplicato mappa del villaggio iniziale con redesign del livello per illustrare un raid nemico incorso.
 - configurare le skill dei nuovi mostri per la mappa del raid.
-- configurare gli eventi nella nuova mappa raid.
 - creare la catena di evente e cutscene che porta dalla fine del raid all'inizio del capitolo 2.
 - popolare il database con oggetti consumabili.
 - popolare il database con equipaggiamenti del personaggio.
@@ -287,48 +299,80 @@ verrete attaccati dalla squadra del re che vuole quella lettera e riconosce nell
 
 Le quest ripetibili, diverranno ripetibili solamente dopo il raid, primasarà necessario completarle una volta ciascuna e almeno due voltel'allenamento con il maestro, per un totale di 5 giorni.L'ordine non è importante.
 
-SCELTA ALLENAMENTO
 
-SI:  
-Si. sono pronto  
-Entra di scatto "Sempronio" e comincia a dire:
+## Da definire
 
-- Grazie! Grazie davvero!Il maestro risponde:
-- FUMETTO INTERROGATIVO
-- Chi è questo?..
 
-il giocatore:
+- Meccanica di potenziamento delle armi
+- Cambio classi
+- missioni ripetibili endgame con boss con difficoltà diverse per potenziare armi (end game)  
 
-- Maestro lui è \\n2,  ha fatto l'iscrizione insieme a me, mi ha chiesto se poteva unirsi a noi durante i nostri  
-allenamenti... è un problema?..
 
-Maestro:
+## Upgrade menu di gioco
 
-- No no, nessun problema, è sempre meglio allenarsi con qualcuno al proprio livello.
-- Rivolto a SEMPRONIO:
-- Potrei sbagliarmi, ma tu hai un volto familiare che per ora non riesco a identificare..
 
-SEMPRONIO FUMETTO INTERROGATIVO e dialogo "...."
+- cambiare estetica del menu  
 
-Maestro:
+- aggiungere opzione caricamento salvataggio nel menu  
 
-- L'allenamento di oggi consiste nel distruggere tutti i fantocci che ho piazzato all'interno della caverna.
+- aggiungere composizione per produzione alchemiche
 
-FINE ALLENAMENTO  
-Maestro:
+## ---- CAPITOLO 2  ----
 
-- Ottimo lavoro!
+#### Suddivisione:
 
-Giocatore:
 
-- Grazie maestro! sono stanco morto...
+- **Acquisizione primo partner del gruppo (SEMPRONIO)**
 
-SEMPRO_NIO:
+1. Arrivo alla capitale  
+ -- la mattina seguente venite incaricati dalla gilda di dirigervi verso la capitale per informare il generale del accaduto prima  
+ di partire ti viene dato il sigillo della gilda con il quale puoi ottenere 2 pozioni per missione da gli alchimisti.  
+ -- In viaggio verso la capitale il party si imbatte in alcuni nemici (probabilmente gruppi di nemici scappati dall'attacco al  
+villaggio)una volta sconfitti troveranno una lettera che descrive il vero scopo dell'attacco che era quello di uccidere proprio  
+il maestro poiché si rivelerà essere uno dei fondatori della gilda nonché membro della squadra che aveva portato la pace 30  
+anni prima sconfiggendo il re delle tenebre con il suo team  
+***//////// Mappa in cui sei attaccato da una banda di mostri ( mix di mostri dal template del raid del villaggio)  
+//////// Alla vittoria un evento (con immagine lettera) che descrive la causa dell'accaduto al villaggio***  
+ -- arrivati alla capitale verrete bloccati fuori dalle mura da dei  
+soldati che vi intimeranno di arrendersi e vi porteranno alla caserma dove verrete interrogati dal generale (un uomo robusto  
+con un forte rispetto per la legge e una forte personalità militare),il generale alla fine dell'interrogatorio vi dira che  
+già sapeva che non eravate parte del esercito della notte poiché aveva riconosciuto lo stemma della gilda ricordando che  
+in passato egli stesso era stato salvato da un eroe della gilda quando svolgeva il ruolo di semplice soldato durante una  
+ricognizione (descrivendovi l eroe non riconoscete nessuno con quelle caratteristiche)  
+***/////// mappe della capitale 4/5 ====> 1 cattedrale, 2 porto, 3 castello, 4 hub centrale, 5 mercato e caserma  
+/////// mappa interni della caserma, con prigione, stanze interrogatorio, dormitorio del soldati, stanza addestramento e   
+/////// ufficio del generale***
+2. Quest del generale
 
-- Si... Sono sempre più convinto di morire...
 
-Maestro:
+ -- dopo di che per testare le vostre abilita vi spedirà in una missione, la prima missione sarà interagire con l apprendista   
+stregone di corte e svolgere insieme a lui una missione di recupero oggetti nella torre distrutta, fatto rapporto l apprendista   
+rimarrà con il nostro eroe nel party  
+\*\**//////// la quest deve essere composta da due mappe per connettere la torre alla città, e la torre che è suddivisa in 4 piani,  
+//////// 1 scrigno nello scantinato, 1 scrigno nell'ultimo piano della torre*  
+\*\*  
+ -- seconda missione verrete mandati a controllare una grotta (vicino al corso d’acqua sulla sinistra del villaggio sotto il   
+castello) ritenuta infestata dal villaggio vicino(circa 2 livelli)una volta ripulita vi verrà chiesto di riferire il successo al villaggio  
+ e al generale  
+***//////// possibile riutilizzo della mappa per andare alla torre come diramazione dal ponte per andare al villaggio costiero  
+//////// mappa di un ingresso alla grotta, grotta suddivisa in due/tre piani, mappa del villaggio costiero per riscossione quest***  
+ --  la prossima missione sarà quella di fornire supporto ad un piccolo contingente di guardia che si trova sotto il villaggio principale  
+***//////// Questa quest riporta al villaggio principale e dirige a sud di esso per raggiungere l'accampamento del contingente e  
+//////// acquisire la quest, (MANCA DETTAGLI SUL CONTENUTO DELLA QUEST)***  
+ -- ultima missione verrete spediti nelle foreste a nord della capitale a sconfiggere il mostro della foresta, alla fine della missione   
+scruterete la fortezza delle forze nemiche che si staglia davanti ad un zona putrida, a questo punto farete rapporto al generale che  
+appreso della vicenda radunerà l esercito per conquistare il forte il tuo team chiede di poter partecipare alla battaglia  
+***//////// Suddivisione del bosco in 3/4 mappe + 1/2 mappe di giunzione alla capitale.***
 
-- Ci vediamo al prossimo allenamento, andate pure a riposarvi...
+1. Combattere con il generale e l'armata di prova  
+ -- il generale decide di portarvi con se a patto che riusciate a sconfiggere alcune unità da lui selezionate (alla fine di questi scontri   
+lui stesso scenderà in battaglia per affrontarvi)
+2. Attacco alla fortezza nel bosco
+3. Dopo la sconfitta rientro alla capitale per fare rapporto. (Sblocco meccanica potenziamento armamenti)  
+-- mattina seguente inizia l avanzata verso il forte nemico, qui inizierà la battaglia che dopo una serie di scontri vi vedrà  
+cadere per la troppa forza nemica,verrete salvati dal generale e vi risveglierete alla capitale con molte ferite. 
+
+
+## ---- CAPITOLO 3 ---- 
 
  
