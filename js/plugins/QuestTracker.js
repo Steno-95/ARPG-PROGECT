@@ -3,16 +3,29 @@
  * @plugindesc Add a questlog menu and a quest tracker object to keep track of all active and completed quests
  * @author Stefano Lezzi
  *
- * @command showMessage
- * @text Show Message
- * @desc Displays a message on screen.
+ * @command addQuest
+ * @desc Retrive a quest from the database and add it as active in the player quest log.
+ * @text Start Quest
  *
- * @arg text
- * @text Message Text
- * @desc The text to display.
- * @type string
- * @default Hello!
+ * @arg id
+ * @type number
+ * @default 0
  *
+ * @command updateObjective
+ * @text Update Objective
+ * @desc Update the objective of the quest specified ID, it takes a questId, objectiveIndex, value
+ *
+ * @arg questId
+ * @desc id of the quest in the json file
+ * @type number
+ *
+ * @arg objectiveIndex
+ * @desc the id of the next step in the object array
+ * @type number
+ *
+ * @arg value
+ * @desc only needed if it's specified a max progression in the objective, it would be the starting point
+ * @type number
  * @help
  * QuestTracker
  *
@@ -27,126 +40,268 @@
   "use strict";
 
   const PLUGIN_NAME = "QuestTracker";
-
   const parameters = PluginManager.parameters(PLUGIN_NAME);
+  const rawQuests = JSON.parse(parameters["quests"] || "[]");
 
-  PluginManager.registerCommand(PLUGIN_NAME, "showMessage", (args) => {
-    const text = args.text || "Hello!";
-    // TODO: Implement your command logic here
-    console.log(`${PLUGIN_NAME}: ${text}`);
+  function parseQuest(raw) {
+    const q = JSON.parse(raw);
+    return {
+      id: Number(q.id),
+      name: q.name,
+      description: q.description,
+      giver: q.giver,
+      questLocation: q.location,
+      objectives: JSON.parse(q.objectives || "[]").map((objective) => {
+        const obj = JSON.parse(objective);
+        return {
+          text: obj.text,
+          max: Number(obj.max),
+          progress: 0,
+          done: false,
+        };
+      }),
+    };
+  }
+  const _DataManager_loadDatabase = DataManager.loadDatabase;
+
+  DataManager.loadDatabase = function () {
+    _DataManager_loadDatabase.call(this);
+    this.loadDataFile("$dataQuests", "Quests.json");
+  };
+  const QUEST_DATABASE = rawQuests.map(parseQuest);
+
+  PluginManager.registerCommand(PLUGIN_NAME, "addQuest", (args) => {
+    const id = Number(args.id);
+    $gameSystem.startQuest(id);
   });
 
-  // TODO: Add your plugin  logic here
+  PluginManager.registerCommand(PLUGIN_NAME, "updateObjective", (args) => {
+    const questId = Number(args.questId);
+    const objIndex = Number(args.objectiveIndex);
+    const value = Number(args.value);
+
+    $gameSystem.updateObjective(questId, objIndex, value);
+  });
 
   /**********************************************************************/
   ///////  DATA DECLARATION
   ///////////////////////////////////////////////////////////////////////
-  Game_System.prototype.setTrackedQuest = function (questId) {
-    this._trackedQuestId = questId || null;
+  Game_System.prototype.setupQuestDatabase = function () {
+    this._questDatabase = QUEST_DATABASE;
   };
 
+  const _Game_System_initialize = Game_System.prototype.initialize;
+
+  //initialize the quest tracker data
+  Game_System.prototype.initialize = function () {
+    _Game_System_initialize.call(this);
+    this.initQuestSystem();
+  };
+
+  //set them to empty before loading from db
+  Game_System.prototype.initQuestSystem = function () {
+    this._quests = {
+      active: [],
+      complete: [],
+    };
+    this.setupQuestDatabase();
+  };
+
+  Game_System.prototype.startQuest = function (questId) {
+    if (!$dataQuests) return;
+    const base = $dataQuests.find((q) => q.id === questId);
+    if (!base) return;
+
+    // prevent duplicates
+    const alreadyActive = this._quests.active.some((q) => q.id === questId);
+    if (alreadyActive) return;
+
+    const quest = {
+      id: base.id,
+      name: base.name,
+      description: base.description,
+      giver: base.giver,
+      questLocation: base.questLocation,
+
+      objectives: base.objectives.map((obj) => ({
+        text: obj.text,
+        max: obj.max || 0,
+        progress: 0,
+        done: false,
+      })),
+    };
+
+    this._quests.active.push(quest);
+  };
+
+  //retrieve contents of the questTracker
+  Game_System.prototype.quests = function () {
+    return this._quests;
+  };
+
+  //add a quest to the _quest.active
+  Game_System.prototype.addQuest = function (quest) {
+    this._quests.active.push(quest);
+  };
+
+  //identify the completed quest in the active array, remove it and push it inside the complete quests array
+  Game_System.prototype.completeQuest = function (questId) {
+    if (!this._quests) {
+      console.error("Quest system not initialized!");
+      return;
+    }
+    const index = this._quests.active.findIndex((q) => q.id === questId);
+    if (index >= 0) {
+      const quest = this._quests.active.splice(index, 1)[0];
+      this._quests.complete.push(quest);
+    }
+  };
+
+  //retrieve either the active  or complete quests array
+  Game_System.prototype.getQuests = function (type) {
+    return this._quests[type] || [];
+  };
+
+  //memorize the id of the quest that is being tracked at this moment
+  Game_System.prototype.setTrackedQuest = function (questId) {
+    this._trackedQuestId =
+      questId !== undefined && questId !== null ? questId : null;
+  };
+
+  //retrieve the ID of the quest currently being tracked
   Game_System.prototype.getTrackedQuest = function () {
     return this._trackedQuestId || null;
   };
 
+  //clear the ID of the quest tracked
   Game_System.prototype.clearTrackedQuest = function () {
     this._trackedQuestId = null;
+    console.log(Scene_Map);
   };
 
-  const Quest = function (
-    name,
-    description,
-    giver,
-    questLocation,
-    type,
-    progress,
-    maxProgress,
-    ...args
-  ) {
-    this.name = name;
-    this.description = description;
-    this.giver = giver;
-    this.questLocation = questLocation;
-    this.type = type;
+  Game_System.prototype.updateObjective = function (questId, index, value) {
+    const quest = this._quests.active.find((q) => q.id === questId);
+    if (!quest) return;
+
+    const obj = quest.objectives[index];
+    if (!obj) return;
+    console.log(quest);
+    if (obj.max) {
+      obj.progress = value;
+      obj.done = obj.progress >= obj.max;
+    } else {
+      obj.done = true;
+    }
+
+    // auto complete quest
+    if (quest.objectives.every((o) => o.done)) {
+      this.completeQuest(questId);
+      this.clearTrackedQuest();
+      console.log(Window_QuestTracker);
+    }
   };
 
-  const questTracker = {
-    active: [
-      {
-        id: 0,
-        name: "quest1",
-        description: "kill 10 rats",
-        track: false,
-        giver: "X, from Y", //nome npc, località
-        progress: 0,
-        maxProgress: 10,
-        type: "main/secondary/repeatable",
-        questLocation: "cave under the inn",
-      },
-      {
-        id: 1,
+  // const Quest = function (
+  //   name,
+  //   description,
+  //   giver,
+  //   questLocation,
+  //   type,
+  //   objectives,
+  //   ...args
+  // ) {
+  //   this.name = name;
+  //   this.description = description;
+  //   this.giver = giver;
+  //   this.questLocation = questLocation;
+  //   this.type = type;
+  // };
 
-        name: "quest2",
-        description: "kill 10 rats",
-        track: false,
-        giver: "X",
-        progress: 0,
-        maxProgress: 10,
-        type: "main/secondary/repeatable",
-        questLocation: "cave under the inn",
-      },
-    ],
-    complete: [
-      {
-        id: 2,
+  // const questTracker = {
+  //   active: [
+  //     {
+  //       id: 1,
+  //       name: "quest1",
+  //       description: "kill 10 rats",
+  //       track: false,
+  //       giver: "X, from Y", //nome npc, località
+  //       objectives: [
+  //         { text: "Talk to the innkeeper", done: true },
+  //         { text: "Kill 10 rats", progress: 3, max: 10, done: true },
+  //         { text: "Return to the innkeeper", done: false },
+  //       ],
+  //       type: "main/secondary/repeatable",
+  //       questLocation: "cave under the inn",
+  //     },
+  //     {
+  //       id: 2,
 
-        name: "quest3",
-        description: "kill 10 rats",
-        track: false,
-        giver: "X",
-        progress: 0,
-        maxProgress: 10,
-        type: "main/secondary/repeatable",
-        questLocation: "cave under the inn",
-      },
-      {
-        id: 3,
+  //       name: "quest2",
+  //       description: "kill 10 rats",
+  //       track: false,
+  //       giver: "X",
+  //       objectives: [
+  //         { text: "Talk to the innkeeper", done: true },
+  //         { text: "Kill 10 rats", progress: 3, max: 10, done: false },
+  //         { text: "Return to the innkeeper", done: false },
+  //       ],
+  //       type: "main/secondary/repeatable",
+  //       questLocation: "cave under the inn",
+  //     },
+  //   ],
+  //   complete: [
+  //     {
+  //       id: 3,
 
-        name: "quest4",
-        description: "kill 10 rats",
-        track: false,
-        giver: "X",
-        progress: 0,
-        maxProgress: 10,
-        type: "main/secondary/repeatable",
-        questLocation: "cave under the inn",
-      },
-    ],
+  //       name: "quest3",
+  //       description: "kill 10 rats",
+  //       track: false,
+  //       giver: "X",
+  //       objectives: [
+  //         { text: "Talk to the innkeeper", done: true },
+  //         { text: "Kill 10 rats", progress: 3, max: 10, done: true },
+  //         { text: "Return to the innkeeper", done: true },
+  //       ],
+  //       type: "main/secondary/repeatable",
+  //       questLocation: "cave under the inn",
+  //     },
+  //     {
+  //       id: 4,
 
-    addQuestActive(quest) {
-      const copyAct = this.active.map();
-      const copyComp = this.active.map();
-      quest.id = copyAct.concat(copyComp).length;
-      this.active.push(quest);
-    },
+  //       name: "quest4",
+  //       description: "kill 10 rats",
+  //       track: false,
+  //       giver: "X",
+  //       objectives: [
+  //         { text: "Talk to the innkeeper", done: true },
+  //         { text: "Kill 10 rats", progress: 3, max: 10, done: true },
+  //         { text: "Return to the innkeeper", done: true },
+  //       ],
+  //       type: "main/secondary/repeatable",
+  //       questLocation: "cave under the inn",
+  //     },
+  //   ],
 
-    addQuestComplete(quest) {
-      const copyAct = this.active.map();
-      const copyComp = this.active.map();
-      quest.id = copyAct.concat(copyComp).length;
+  //   updateObjective(questId, objIndex, value) {
+  //     const quest = this.active.find((q) => q.id === questId);
+  //     if (!quest) return;
 
-      this.complete.push(quest);
-    },
+  //     const obj = quest.objectives[objIndex];
 
-    getQuest(index, type = "active") {
-      return this[type][index];
-    },
+  //     if (obj.max) {
+  //       obj.progress = value;
+  //       obj.done = obj.progress >= obj.max;
+  //     } else {
+  //       obj.done = value;
+  //     }
 
-    removeQuestActive(index) {
-      const quest = this.active.splice(index, 1)[0];
-      this.addQuestComplete(quest);
-    },
-  };
+  //     // auto-complete quest
+  //     if (quest.objectives.every((o) => o.done)) {
+  //       const index = this.active.indexOf(quest);
+  //       this.removeQuestActive(index);
+  //     }
+  //   },
+  // };
 
   //-----------------------------------------------------------------------------
   //Should add the menu button between status and formation
@@ -216,16 +371,8 @@
   };
 
   Window_QuestCategory.prototype.makeCommandList = function () {
-    if (this.needsCommand("active")) {
-      this.addCommand("Quest Attive", "active");
-    }
-    if (this.needsCommand("complete")) {
-      this.addCommand("Quest Completate", "complete");
-    }
-  };
-
-  Window_QuestCategory.prototype.needsCommand = function (name) {
-    return questTracker[name] && questTracker[name].length > 0;
+    this.addCommand("Quest Attive", "active");
+    this.addCommand("Quest Completate", "complete");
   };
 
   Window_QuestCategory.prototype.setQuestWindow = function (questWindow) {
@@ -279,7 +426,7 @@
   };
 
   Window_QuestList.prototype.makeQuestList = function () {
-    this._data = questTracker[this._category] || [];
+    this._data = $gameSystem.getQuests(this._category);
   };
 
   Window_QuestList.prototype.selectLast = function () {
@@ -294,7 +441,7 @@
     const tracked = $gameSystem.getTrackedQuest();
 
     //Evidenzia se tracciata
-    console.log("Tracked:", tracked, "Quest ID:", quest.id);
+
     if (tracked !== null && quest.id === tracked) {
       this.changeTextColor(ColorManager.textColor(3));
     } else {
@@ -335,8 +482,9 @@
 
   Window_QuestList.prototype.processTrack = function () {
     const quest = this.quest();
-
-    if (quest) {
+    console.log(quest);
+    console.log($gameSystem.getQuests("complete").includes(quest));
+    if (quest && !$gameSystem.getQuests("complete").includes(quest)) {
       const current = $gameSystem.getTrackedQuest();
 
       if (current === quest.id) {
@@ -354,6 +502,16 @@
 
   Window_QuestList.prototype.setDetailWindow = function (window) {
     this._detailWindow = window;
+  };
+
+  Window_QuestList.prototype.select = function (index) {
+    if (this.index() !== index) {
+      Window_Selectable.prototype.select.call(this, index);
+
+      if (this._detailWindow) {
+        this._detailWindow.setQuest(this.quest());
+      }
+    }
   };
   /////////////////////////////////////////////////////////////////////
   // Window_QuestDetail
@@ -412,9 +570,42 @@
 
     y += this.lineHeight() * 5;
 
-    //Kill Count
-    const progText = `Progresso: ${this._quest.progress}/${this._quest.maxProgress}`;
-    this.drawText(progText, x, y, width);
+    // Objectives
+
+    this.drawText("Obiettivi:", x, y, width);
+    y += this.lineHeight();
+
+    //variable to track if we have displayed the next step without displaying all of the steps that compose a quest
+    let displayedStepToDo = false;
+
+    //loop the quest object, for each item will display a text
+    this._quest.objectives.forEach((obj) => {
+      let text = obj.text;
+
+      //if there is a max it will display a current/total text
+      if (obj.max) {
+        text += ` (${obj.progress}/${obj.max})`;
+      }
+
+      //if the step results completed will add the "✔ " icon and draw the text
+      if (obj.done) {
+        this.changeTextColor(ColorManager.textColor(3));
+        text = "✔ " + text;
+
+        this.drawText(text, x + 10, y, width);
+        y += this.lineHeight();
+      } else {
+        //if the next step is not displayed it will draw it and set the variable to true to prevent the logic to draw all the successive step before the current one is completed
+        if (!displayedStepToDo) {
+          this.changeTextColor(ColorManager.normalColor());
+          text = "• " + text;
+
+          this.drawText(text, x + 10, y, width);
+          y += this.lineHeight();
+          displayedStepToDo = true;
+        }
+      }
+    });
   };
 
   //-----------------------------------------------------------------------------
@@ -524,3 +715,72 @@
 //     const rate = this._quest.progress / this._quest.maxProgress;
 //     this.drawGauge(x, y, width, rate, "#00ff00", "#008800");
 // }; E chiamarla nel refresh.
+
+const _Scene_Map_CreateAllWindows = Scene_Map.prototype.createAllWindows;
+
+Scene_Map.prototype.createAllWindows = function () {
+  _Scene_Map_CreateAllWindows.call(this);
+  if ($gameSystem.getTrackedQuest()) {
+    this.createQuestTrackerWindow();
+  }
+};
+
+Scene_Map.prototype.createQuestTrackerWindow = function () {
+  const rect = new Rectangle(0, 0, 300, 150);
+  this._questTrackerWindow = new Window_QuestTracker(rect);
+  this.addWindow(this._questTrackerWindow);
+};
+
+function Window_QuestTracker() {
+  this.initialize(...arguments);
+}
+
+Window_QuestTracker.prototype = Object.create(Window_Base.prototype);
+Window_QuestTracker.prototype.constructor = Window_QuestTracker;
+
+Window_QuestTracker.prototype.initialize = function (rect) {
+  Window_Base.prototype.initialize.call(this, rect);
+  this.refresh();
+};
+
+Window_QuestTracker.prototype.update = function () {
+  Window_Base.prototype.update.call(this);
+
+  const trackedId = $gameSystem.getTrackedQuest();
+  if (this._lastTracked !== trackedId) {
+    this._lastTracked = trackedId;
+    this.refresh();
+  }
+};
+
+Window_QuestTracker.prototype.refresh = function () {
+  this.contents.clear();
+
+  const trackedId = $gameSystem.getTrackedQuest();
+  if (trackedId === null) return;
+  const quest = $gameSystem.getQuests("active").find((q) => q.id === trackedId);
+  if (!quest) return;
+
+  let x = 0;
+  let y = 0;
+
+  //Title
+  this.changeTextColor(ColorManager.systemColor());
+  this.drawText(quest.name, x, y, this.contents.width);
+
+  y += this.lineHeight();
+
+  //First imcolpete objective
+  const obj = quest.objectives.find((objective) => !objective.done);
+
+  if (obj) {
+    this.changeTextColor(ColorManager.normalColor());
+
+    let text = obj.text;
+    if (obj.max) {
+      text += ` (${obj.progress}/${obj.max})`;
+    }
+
+    this.drawText(text, x, y, this.contents.width);
+  }
+};
