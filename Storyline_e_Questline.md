@@ -376,10 +376,10 @@ cadere per la troppa forza nemica,verrete salvati dal generale e vi risveglieret
 #### --COMANDO PLUGIN Update Objective:
 
 
-| questId            | L'id della quest da aggiornare                                                                                      |
-|--------------------|---------------------------------------------------------------------------------------------------------------------|
-| **objectiveIndex** | Indice dello step degli obbiettivi da aggiornare                                                                    |
-| **value**          | valore da assegnare in caso lo step dell'obbiettivo preveda un target massimo prima del completamento.<br>ex. (0/3) |
+| questId            | L'id della quest da aggiornare                                                                                                                             |
+|--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **objectiveIndex** | Indice dello step degli obbiettivi da aggiornare                                                                                                           |
+| **variableId**     | seleziona la variabile da usare come riferimento nel database per le quest che hanno una sorta di progressione numerica, tipo uccisioni o raccolta oggetti |
 
 
    
