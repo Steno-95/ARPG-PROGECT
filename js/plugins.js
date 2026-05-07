@@ -13,5 +13,6 @@ var $plugins =
 {"name":"EffekseerAnimationColorChange","status":true,"description":"Effekseer Animation Color Change v1.0.3","parameters":{"AnimationNameParseErrorMessage":"The name of animation ID (%1) is invalid."}},
 {"name":"ContinuousAnimation","status":true,"description":"continuous animation v1.0.0","parameters":{}},
 {"name":"build/MapActorStatus","status":true,"description":"MapActorStatus v1.1.0","parameters":{"EnableMapActorStatusSwitchId":"3","LeaderOnly":"false","StatusAreaX":"40","StatusAreaY":"480","StatusAreaSpace":"40","GaugeWidth":"128","GaugeHeight":"24"}},
-{"name":"build/CharacterCollisionEx","status":true,"description":"CharacterCollisionEx v1.0.2","parameters":{}}
+{"name":"build/CharacterCollisionEx","status":true,"description":"CharacterCollisionEx v1.0.2","parameters":{}},
+{"name":"QuestTracker","status":true,"description":"Add a questlog menu and a quest tracker object to keep track of all active and completed quests","parameters":{}}
 ];

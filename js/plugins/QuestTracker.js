@@ -23,9 +23,10 @@
  * @desc the id of the next step in the object array
  * @type number
  *
- * @arg value
+ * @arg variableId
  * @desc only needed if it's specified a max progression in the objective, it would be the starting point
- * @type number
+ * @type variable
+ * @default 0
  * @help
  * QuestTracker
  *
@@ -48,6 +49,8 @@
     return {
       id: Number(q.id),
       name: q.name,
+      repeatable: q.repeatable || false,
+      type: q.type || "secondary",
       description: q.description,
       giver: q.giver,
       questLocation: q.location,
@@ -78,14 +81,15 @@
   PluginManager.registerCommand(PLUGIN_NAME, "updateObjective", (args) => {
     const questId = Number(args.questId);
     const objIndex = Number(args.objectiveIndex);
-    const value = Number(args.value);
+    const varId = args.variableId;
 
-    $gameSystem.updateObjective(questId, objIndex, value);
+    $gameSystem.updateObjective(questId, objIndex, varId);
   });
 
   /**********************************************************************/
   ///////  DATA DECLARATION
   ///////////////////////////////////////////////////////////////////////
+
   Game_System.prototype.setupQuestDatabase = function () {
     this._questDatabase = QUEST_DATABASE;
   };
@@ -113,12 +117,16 @@
     if (!base) return;
 
     // prevent duplicates
-    const alreadyActive = this._quests.active.some((q) => q.id === questId);
+    const alreadyActive =
+      this._quests.active.some((q) => q.id === questId) ||
+      this._quests.complete.some((q) => q.id === questId);
     if (alreadyActive) return;
 
     const quest = {
       id: base.id,
       name: base.name,
+      repeatable: base.repeatable || false,
+      type: base.type || "secondary",
       description: base.description,
       giver: base.giver,
       questLocation: base.questLocation,
@@ -131,7 +139,11 @@
       })),
     };
 
-    this._quests.active.push(quest);
+    this.addQuest(quest);
+    this.setTrackedQuest(quest.id);
+    const scene = SceneManager._scene;
+    //might become a BUG
+    if (!scene._questTrackerWindow) scene.createQuestTrackerWindow();
   };
 
   //retrieve contents of the questTracker
@@ -153,7 +165,12 @@
     const index = this._quests.active.findIndex((q) => q.id === questId);
     if (index >= 0) {
       const quest = this._quests.active.splice(index, 1)[0];
-      this._quests.complete.push(quest);
+      if (!quest.repeatable) this._quests.complete.push(quest);
+
+      // 👇 IMPORTANT: untrack if this was the tracked quest
+      if (this._trackedQuestId === questId) {
+        this.clearTrackedQuest();
+      }
     }
   };
 
@@ -176,18 +193,15 @@
   //clear the ID of the quest tracked
   Game_System.prototype.clearTrackedQuest = function () {
     this._trackedQuestId = null;
-    console.log(Scene_Map);
   };
 
-  Game_System.prototype.updateObjective = function (questId, index, value) {
+  Game_System.prototype.updateObjective = function (questId, index, varId) {
     const quest = this._quests.active.find((q) => q.id === questId);
     if (!quest) return;
-
     const obj = quest.objectives[index];
     if (!obj) return;
-    console.log(quest);
     if (obj.max) {
-      obj.progress = value;
+      obj.progress = $gameVariables.value(varId);
       obj.done = obj.progress >= obj.max;
     } else {
       obj.done = true;
@@ -197,111 +211,8 @@
     if (quest.objectives.every((o) => o.done)) {
       this.completeQuest(questId);
       this.clearTrackedQuest();
-      console.log(Window_QuestTracker);
     }
   };
-
-  // const Quest = function (
-  //   name,
-  //   description,
-  //   giver,
-  //   questLocation,
-  //   type,
-  //   objectives,
-  //   ...args
-  // ) {
-  //   this.name = name;
-  //   this.description = description;
-  //   this.giver = giver;
-  //   this.questLocation = questLocation;
-  //   this.type = type;
-  // };
-
-  // const questTracker = {
-  //   active: [
-  //     {
-  //       id: 1,
-  //       name: "quest1",
-  //       description: "kill 10 rats",
-  //       track: false,
-  //       giver: "X, from Y", //nome npc, località
-  //       objectives: [
-  //         { text: "Talk to the innkeeper", done: true },
-  //         { text: "Kill 10 rats", progress: 3, max: 10, done: true },
-  //         { text: "Return to the innkeeper", done: false },
-  //       ],
-  //       type: "main/secondary/repeatable",
-  //       questLocation: "cave under the inn",
-  //     },
-  //     {
-  //       id: 2,
-
-  //       name: "quest2",
-  //       description: "kill 10 rats",
-  //       track: false,
-  //       giver: "X",
-  //       objectives: [
-  //         { text: "Talk to the innkeeper", done: true },
-  //         { text: "Kill 10 rats", progress: 3, max: 10, done: false },
-  //         { text: "Return to the innkeeper", done: false },
-  //       ],
-  //       type: "main/secondary/repeatable",
-  //       questLocation: "cave under the inn",
-  //     },
-  //   ],
-  //   complete: [
-  //     {
-  //       id: 3,
-
-  //       name: "quest3",
-  //       description: "kill 10 rats",
-  //       track: false,
-  //       giver: "X",
-  //       objectives: [
-  //         { text: "Talk to the innkeeper", done: true },
-  //         { text: "Kill 10 rats", progress: 3, max: 10, done: true },
-  //         { text: "Return to the innkeeper", done: true },
-  //       ],
-  //       type: "main/secondary/repeatable",
-  //       questLocation: "cave under the inn",
-  //     },
-  //     {
-  //       id: 4,
-
-  //       name: "quest4",
-  //       description: "kill 10 rats",
-  //       track: false,
-  //       giver: "X",
-  //       objectives: [
-  //         { text: "Talk to the innkeeper", done: true },
-  //         { text: "Kill 10 rats", progress: 3, max: 10, done: true },
-  //         { text: "Return to the innkeeper", done: true },
-  //       ],
-  //       type: "main/secondary/repeatable",
-  //       questLocation: "cave under the inn",
-  //     },
-  //   ],
-
-  //   updateObjective(questId, objIndex, value) {
-  //     const quest = this.active.find((q) => q.id === questId);
-  //     if (!quest) return;
-
-  //     const obj = quest.objectives[objIndex];
-
-  //     if (obj.max) {
-  //       obj.progress = value;
-  //       obj.done = obj.progress >= obj.max;
-  //     } else {
-  //       obj.done = value;
-  //     }
-
-  //     // auto-complete quest
-  //     if (quest.objectives.every((o) => o.done)) {
-  //       const index = this.active.indexOf(quest);
-  //       this.removeQuestActive(index);
-  //     }
-  //   },
-  // };
 
   //-----------------------------------------------------------------------------
   //Should add the menu button between status and formation
@@ -418,7 +329,8 @@
   };
 
   Window_QuestList.prototype.quest = function () {
-    return this.questAt(this.index());
+    const quest = this.questAt(this.index());
+    return quest && !quest.header ? quest : null;
   };
 
   Window_QuestList.prototype.questAt = function (index) {
@@ -426,7 +338,46 @@
   };
 
   Window_QuestList.prototype.makeQuestList = function () {
-    this._data = $gameSystem.getQuests(this._category);
+    // this._data = $gameSystem.getQuests(this._category);
+    this._data = [];
+
+    //ottieni le quest attive correnti con l'API call
+    const quests = $gameSystem.getQuests(this._category);
+
+    //estrai tutte le quest primarie
+    const mainQuests = quests.filter((q) => q.type === "main");
+
+    //estrai tutte le quest secondarie
+    const secondaryQuests = quests.filter((q) => q.type === "secondary");
+
+    //se c'è delle quest primarie, crea il primo elemento come titolo e poi aggiungi le quest primarie
+    if (mainQuests.length > 0) {
+      this._data.push({
+        header: true,
+        title: "Principali",
+      });
+
+      this._data.push(...mainQuests);
+    }
+
+    //se c'è delle quest secondarie, crea l'elemento con il titolo e poi aggiungi le quest secondarie
+    if (secondaryQuests.length > 0) {
+      this._data.push({
+        header: true,
+        title: "Secondarie",
+      });
+
+      this._data.push(...secondaryQuests);
+    }
+  };
+
+  //per rendere i titoli dei raggruppamenti non interagibili
+  Window_QuestList.prototype.isEnabled = function (item) {
+    return item && !item.header;
+  };
+
+  Window_QuestList.prototype.isCurrentItemEnabled = function () {
+    return this.isEnabled(this.quest());
   };
 
   Window_QuestList.prototype.selectLast = function () {
@@ -438,22 +389,43 @@
     if (!quest) return;
 
     const rect = this.itemLineRect(index);
+
+    //HEADER
+    if (quest.header) {
+      this.changeTextColor(ColorManager.systemColor());
+      this.contents.fontBold = true;
+      this.contents.fontSize = 20;
+
+      this.drawText(quest.title, rect.x, rect.y, rect.width);
+
+      this.contents.fontBold = false;
+      this.resetFontSettings();
+      this.resetTextColor();
+      return;
+    }
+
+    //NORMAL QUEST
     const tracked = $gameSystem.getTrackedQuest();
 
     //Evidenzia se tracciata
 
+    this.contents.fontSize = 17;
     if (tracked !== null && quest.id === tracked) {
       this.changeTextColor(ColorManager.textColor(3));
     } else {
       this.changeTextColor(ColorManager.normalColor());
     }
 
-    this.drawText(quest.name, rect.x, rect.y, rect.width);
-
-    //icona
-    if (quest.id === tracked) {
-      this.drawText("★", rect.x + rect.width - 32, rect.y, 32, "right");
-    }
+    const linesTitle = wrapText(quest.name, rect.width, this);
+    linesTitle.forEach((line, i) => {
+      this.drawText(
+        `${quest.id === tracked ? "★ " : "• "}` + line.trim(),
+        rect.x + 10,
+        rect.y,
+        rect.width,
+      );
+      if (linesTitle.length > i + 1) y += this.lineHeight() / 1.5;
+    });
 
     this.resetTextColor();
   };
@@ -482,8 +454,7 @@
 
   Window_QuestList.prototype.processTrack = function () {
     const quest = this.quest();
-    console.log(quest);
-    console.log($gameSystem.getQuests("complete").includes(quest));
+
     if (quest && !$gameSystem.getQuests("complete").includes(quest)) {
       const current = $gameSystem.getTrackedQuest();
 
@@ -504,13 +475,27 @@
     this._detailWindow = window;
   };
 
+  //aggiunge hover behavior a le quest e lo rimuove dai raggruppamenti
   Window_QuestList.prototype.select = function (index) {
-    if (this.index() !== index) {
-      Window_Selectable.prototype.select.call(this, index);
+    // if (this.index() !== index) {
+    // Window_Selectable.prototype.select.call(this, index);
 
-      if (this._detailWindow) {
-        this._detailWindow.setQuest(this.quest());
+    // if (this._detailWindow) {
+    // this._detailWindow.setQuest(this.quest());
+    // }
+    // }
+    Window_Selectable.prototype.select.call(this, index);
+
+    const item = this.quest();
+
+    if (item && item.header) {
+      if (index < this.maxItems() - 1) {
+        this.select(index + 1);
       }
+    }
+
+    if (this._detailWindow && item && !item.header) {
+      this._detailWindow.setQuest(item);
     }
   };
   /////////////////////////////////////////////////////////////////////
@@ -540,37 +525,63 @@
     let x = 0;
     let y = 0;
     const width = this.contents.width;
+    const MAX_WIDTH = Graphics.boxWidth / 2 - 10;
 
     //Nome Quest
-    this.changeTextColor(ColorManager.systemColor());
-    this.drawText(this._quest.name.toUpperCase(), x, y, width);
+    this.contents.fontSize = 20;
+    const linesTitle = wrapText(
+      this._quest.name.toUpperCase(),
+      MAX_WIDTH,
+      this,
+    );
 
-    y += this.lineHeight();
+    linesTitle.forEach((line, i) => {
+      this.changeTextColor(ColorManager.systemColor());
+      this.drawText(line.trim(), x, y, MAX_WIDTH);
+      if (linesTitle.length > i + 1) y += this.lineHeight() / 1.5;
+      else y += this.lineHeight() / 1.2;
+    });
 
     const tracked = $gameSystem.getTrackedQuest();
     if (this._quest.id === tracked) {
+      this.contents.fontSize = 19;
       this.changeTextColor(ColorManager.textColor(3));
       this.drawText("QUEST ATTIVA", x, y, width);
       y += this.lineHeight();
-      this.changeTextColor(ColorManager.normalColor());
     }
     //Giver
-    this.changeTextColor(ColorManager.normalColor());
-    this.drawText("Da: " + this._quest.giver, x, y, width);
+    this.changeTextColor(ColorManager.systemColor());
+    this.drawTextEx(
+      "\\FS[18]\\c[1]Da: \\c[0]" + this._quest.giver,
+      x,
+      y,
+      width,
+    );
 
     y += this.lineHeight();
 
     //Location
-    this.drawText("Luogo: " + this._quest.questLocation, x, y, width);
+    this.drawTextEx(
+      "\\FS[18]\\c[1]Luogo: \\c[0]" + this._quest.questLocation,
+      x,
+      y,
+      width,
+    );
 
     y += this.lineHeight();
 
     //Desciption
-    this.drawTextEx(this._quest.description, x, y, width);
+    const linesDescription = wrapText(this._quest.description, MAX_WIDTH, this);
 
-    y += this.lineHeight() * 5;
+    linesDescription.forEach((line, i) => {
+      this.drawText(line.trim(), x, y, MAX_WIDTH);
+      if (linesDescription.length > i + 1) y += this.lineHeight() / 1.5;
+      else y += this.lineHeight() / 1.2;
+    });
 
     // Objectives
+    this.contents.fontSize = 19;
+    this.changeTextColor(ColorManager.textColor(3));
 
     this.drawText("Obiettivi:", x, y, width);
     y += this.lineHeight();
@@ -590,18 +601,28 @@
       //if the step results completed will add the "✔ " icon and draw the text
       if (obj.done) {
         this.changeTextColor(ColorManager.textColor(3));
-        text = "✔ " + text;
+        this.contents.fontSize = 16;
 
-        this.drawText(text, x + 10, y, width);
-        y += this.lineHeight();
+        text = "✔ " + text;
+        const linesObjective = wrapText(text, MAX_WIDTH, this);
+        linesObjective.forEach((line, i) => {
+          this.drawText(line.trim(), x + 10, y, MAX_WIDTH);
+          if (linesObjective.length > i + 1) y += this.lineHeight() / 1.5;
+          else y += this.lineHeight() / 1.2;
+        });
       } else {
         //if the next step is not displayed it will draw it and set the variable to true to prevent the logic to draw all the successive step before the current one is completed
         if (!displayedStepToDo) {
           this.changeTextColor(ColorManager.normalColor());
-          text = "• " + text;
+          this.contents.fontSize = 16;
 
-          this.drawText(text, x + 10, y, width);
-          y += this.lineHeight();
+          text = "• " + text;
+          const linesObjective = wrapText(text, MAX_WIDTH, this);
+          linesObjective.forEach((line, i) => {
+            this.drawText(line.trim(), x + 10, y, MAX_WIDTH);
+            if (linesObjective.length > i + 1) y += this.lineHeight() / 1.5;
+            else y += this.lineHeight() / 1.2;
+          });
           displayedStepToDo = true;
         }
       }
@@ -726,10 +747,13 @@ Scene_Map.prototype.createAllWindows = function () {
 };
 
 Scene_Map.prototype.createQuestTrackerWindow = function () {
-  const rect = new Rectangle(0, 0, 300, 150);
+  const rect = new Rectangle(0, 0, 300, 160);
   this._questTrackerWindow = new Window_QuestTracker(rect);
   this.addWindow(this._questTrackerWindow);
 };
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////*************** WINDOW QUEST TRACKER ****************************************/
 
 function Window_QuestTracker() {
   this.initialize(...arguments);
@@ -747,14 +771,32 @@ Window_QuestTracker.prototype.update = function () {
   Window_Base.prototype.update.call(this);
 
   const trackedId = $gameSystem.getTrackedQuest();
+
+  // Hide window if nothing is tracked
+  if (trackedId === null) {
+    this.visible = false;
+    return;
+  }
+
+  // Check if quest still exists in active list
+  const quest = $gameSystem.getQuests("active").find((q) => q.id === trackedId);
+
+  if (!quest) {
+    this.opacity = Math.max(0, this.opacity - 20);
+    return;
+  } else {
+    this.opacity = Math.min(255, this.opacity + 20);
+  }
+
   if (this._lastTracked !== trackedId) {
     this._lastTracked = trackedId;
-    this.refresh();
   }
+  this.refresh();
 };
 
 Window_QuestTracker.prototype.refresh = function () {
   this.contents.clear();
+  const MAX_WIDTH = 300;
 
   const trackedId = $gameSystem.getTrackedQuest();
   if (trackedId === null) return;
@@ -765,13 +807,19 @@ Window_QuestTracker.prototype.refresh = function () {
   let y = 0;
 
   //Title
+  this.contents.fontSize = 18;
   this.changeTextColor(ColorManager.systemColor());
-  this.drawText(quest.name, x, y, this.contents.width);
+  const lines_quest = wrapText(quest.name, MAX_WIDTH, this);
 
-  y += this.lineHeight();
+  lines_quest.forEach((line, i) => {
+    this.drawText(line.trim(), x, y, MAX_WIDTH);
+    if (lines_quest.length > i + 1) y += this.lineHeight() / 1.5;
+    else y += this.lineHeight() / 1.2;
+  });
 
   //First imcolpete objective
   const obj = quest.objectives.find((objective) => !objective.done);
+  this.contents.fontSize = 16;
 
   if (obj) {
     this.changeTextColor(ColorManager.normalColor());
@@ -780,7 +828,39 @@ Window_QuestTracker.prototype.refresh = function () {
     if (obj.max) {
       text += ` (${obj.progress}/${obj.max})`;
     }
+    const lines_text = wrapText(text, MAX_WIDTH, this);
 
-    this.drawText(text, x, y, this.contents.width);
+    lines_text.forEach((line, i) => {
+      this.drawText(
+        line.trim(),
+        x,
+        y + (i * this.lineHeight()) / 1.5,
+        MAX_WIDTH,
+      );
+    });
   }
+  this.resetFontSettings();
 };
+
+function wrapText(text, maxWidth, window) {
+  const words = text.split(" ");
+  const lines = [];
+  let currentLine = "";
+
+  for (const word of words) {
+    const testLine = currentLine + word + " ";
+
+    const width = window.textWidth(testLine);
+
+    if (width > maxWidth && currentLine !== "") {
+      lines.push(currentLine);
+      currentLine = word + " ";
+    } else {
+      currentLine = testLine;
+    }
+  }
+
+  if (currentLine) lines.push(currentLine);
+
+  return lines;
+}

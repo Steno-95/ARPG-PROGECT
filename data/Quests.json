@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "name": "Il tuo maestro ti aspetta alla locanda",
+    "description": "Il tuo maestro ti aspetta alla locanda",
+    "type": "main",
+    "giver": "Maestro",
+    "questLocation": "Locanda",
+    "objectives": [
+      { "text": "Raggiungi il tuo maestro alla locanda", "max": 0 },
+      {
+        "text": "Parla con la receptionist per iscriverti alla gilda degli avventurieri",
+        "max": 0
+      },
+      { "text": "Completa le quest di introduzione", "max": 3 }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "talk to dog",
+    "description": "talk to dog",
+    "giver": "boy",
+    "questLocation": "map",
+    "objectives": [
+      {
+        "text": "talk to the dog",
+        "max": 0
+      }
+    ]
+  }
+]
