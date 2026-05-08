@@ -244,7 +244,7 @@ CAPITOLO 4
 | 065 Rats Kills Maestro Quest [1/3]     | Incrementa da 0 a 5 fino all'uccisione di tutti i topi nella cantina (finisce a 6 per evitare ripetizioni di eventi) |
 | 066 Rats Kills Maestro Quest [2/3]     | Incrementa da 0 a 5 fino all'uccisione di tutti i topi nella caverna (finisce a 6 per evitare ripetizioni di eventi) |
 | 067 Bandits Kills Maestro Quest [3/3]  | Incrementa da 0 a 3 fino all'uccisione di tutti i banditi nel bosco (finisce a 4 per evitare ripetizioni di eventi)  |
-| 068 Giorni al Raid                     | Incrementa da 0 a 7, conta i giorni trascorsi prima dell'attacco al villaggio                                        |
+| 068 Giorni al Raid                     | Incrementa da 0 a 6, conta i giorni trascorsi prima dell'attacco al villaggio                                        |
 | 069 Rats Kills (Repeatable)            | Incrementa da 0 a 19 fino all'uccisione di tutti i topi necessari al completamento della quest di gilda              |
 | 070 Bandit Kills (Repeatable)          | Incrementa da 0 a 22 fino all'uccisione di tutti i banditi necessari al completamento della quest di gilda           |
 | 071 Scheletri Kills (Repeatable)       | Incrementa da 0 a 20 fino all'uccisione di tutti gli zombiee necessari al completamento della quest di gilda         |
@@ -362,8 +362,6 @@ cadere per la troppa forza nemica,verrete salvati dal generale e vi risveglieret
 
 ## ---- CAPITOLO 3 ----
 
- 
-
 ### ---COMANDI PLUGIN PER LE QUEST---
 
 #### --COMANDO PLUGIN Start Quest:
@@ -380,9 +378,6 @@ cadere per la troppa forza nemica,verrete salvati dal generale e vi risveglieret
 |--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **objectiveIndex** | Indice dello step degli obbiettivi da aggiornare                                                                                                           |
 | **variableId**     | seleziona la variabile da usare come riferimento nel database per le quest che hanno una sorta di progressione numerica, tipo uccisioni o raccolta oggetti |
-
-
-   
 
 
  
