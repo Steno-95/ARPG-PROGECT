@@ -50,6 +50,9 @@
     "questLocation": "Magazzino del villaggio",
     "objectives": [
       {
+        "text": "Chiedi più informazioni alla receptionist"
+      },
+      {
         "text": "Recati al magazzino del villaggio e deposita i materiali",
         "max": 5
       },
@@ -212,7 +215,8 @@
       { "text": "Esplora il mausoleo", "max": 0 },
       { "text": "Elimina i non-morti che infestano il mausoleo", "max": 4 },
       {
-        "text": "Fai rapporto alla gilda per riscuote la ricompensa e concludere la giornata"
+        "text": "Fai rapporto alla gilda per riscuote la ricompensa e concludere la giornata",
+        "max": 0
       }
     ]
   },
@@ -277,7 +281,7 @@
   {
     "id": 14,
     "name": "Rimuovere l'accampamento dei banditi",
-    "description": "TODO",
+    "description": "Dei banditi hanno rioccupato il precedente accampamento lungo il fiume! Si richiede l'intervento della gilda al più presto.",
     "type": "secondary",
     "giver": "Gilda",
     "repeatable": true,
@@ -301,7 +305,7 @@
   {
     "id": 15,
     "name": "Ripulire il cimitero nel bosco",
-    "description": "TODO",
+    "description": "Provengono di nuovo strani rumori dal cimitero... potrebbe essere pericoloso, si richiede l'intervento della gilda per rimuovere eventuali minacce.",
     "giver": "Gilda",
     "repeatable": true,
     "questLocation": "Rovina a sud del Bosco di Sunset",
