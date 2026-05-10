@@ -228,6 +228,14 @@
     this.addCommand("Quest Log", "questLog", true);
   };
 
+  //remove the formation button if there is no party
+  Window_MenuCommand.prototype.makeCommandList = function () {
+    this.addMainCommands();
+    if ($gameParty.members().length > 1) this.addFormationCommand();
+    this.addOriginalCommands();
+    this.addSaveCommand();
+    this.addGameEndCommand();
+  };
   // Scene_Menu
   // The scene class of the menu screen.
 
@@ -240,6 +248,7 @@
     commandWindow.setHandler("status", this.commandPersonal.bind(this));
     //Should add the questLog button in the menu
     commandWindow.setHandler("questLog", this.commandQuest.bind(this));
+
     commandWindow.setHandler("formation", this.commandFormation.bind(this));
     commandWindow.setHandler("options", this.commandOptions.bind(this));
     commandWindow.setHandler("save", this.commandSave.bind(this));
