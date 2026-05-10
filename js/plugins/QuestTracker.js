@@ -20,13 +20,14 @@
  * @type number
  *
  * @arg objectiveIndex
- * @desc the id of the next step in the object array
+ * @desc the id of the next step in the objective array
  * @type number
  *
  * @arg variableId
  * @desc only needed if it's specified a max progression in the objective, it would be the starting point
  * @type variable
  * @default 0
+ *
  * @help
  * QuestTracker
  *
@@ -202,7 +203,8 @@
     const obj = quest.objectives[index];
     if (!obj) return;
     if (obj.max) {
-      obj.progress = $gameVariables.value(varId);
+      // obj.progress = $gameVariables.value(varId);
+      obj.progress += 1;
       obj.done = obj.progress >= obj.max;
     } else {
       obj.done = true;

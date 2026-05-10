@@ -12,7 +12,11 @@
         "text": "Parla con la receptionist per iscriverti alla gilda degli avventurieri",
         "max": 0
       },
-      { "text": "Completa le quest di introduzione", "max": 3 }
+      { "text": "Completa le quest di introduzione", "max": 3 },
+      {
+        "text": "Il tuo maestro ti aspetta all'ingresso della locanda",
+        "max": 0
+      }
     ]
   },
   {
