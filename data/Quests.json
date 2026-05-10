@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "name": "Il tuo maestro ti aspetta alla locanda",
-    "description": "Il tuo maestro ti aspetta alla locanda",
+    "name": "L'inizio dell'avventura",
+    "description": "Il tuo maestro ti aspetta alla locanda, deve parlarti di qualcosa",
     "type": "main",
     "giver": "Maestro",
     "questLocation": "Locanda",
@@ -17,13 +17,302 @@
   },
   {
     "id": 2,
-    "name": "talk to dog",
-    "description": "talk to dog",
-    "giver": "boy",
-    "questLocation": "map",
+    "name": "Aiuto per l'alchimista",
+    "description": "L'alchimista del villaggio ha bisogno di una mano a procurarsi dei materiali, visitala nel suo negozio per ulteriori dettagli",
+    "type": "secondary",
+    "giver": "Gilda",
+    "questLocation": "Casa dell'Alchimista",
     "objectives": [
       {
-        "text": "talk to the dog",
+        "text": "Recati a casa dell'alchimista per ricevere ulteriori informazioni sul contenuto della quest",
+        "max": 0
+      },
+      {
+        "text": "L'alchimista ha bisogno che le procuri tre erbe comuni che crescono nel villaggio e i reagenti nel magazzino ",
+        "max": 4
+      },
+      { "text": "Porta i materiali raccolti all'alchimista", "max": 0 },
+      {
+        "text": "Fai rapporto alla gilda per concludere la quest e ottenere la ricompensa"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Commissioni per la gilda",
+    "description": "La gilda ha bisogno di aiuto nel trasporto di alcuni materiali al magazzino del villaggio, parlare alla receptionist per ulteriori dettagli.",
+    "type": "secondary",
+    "giver": "Gilda",
+    "questLocation": "Magazzino del villaggio",
+    "objectives": [
+      {
+        "text": "Recati al magazzino del villaggio e deposita i materiali",
+        "max": 5
+      },
+      {
+        "text": "Fai rapporto alla receptionist per concludere la quest e ottenere la ricompensa",
+        "max": 0
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Silvia ha bisogno d'aiuto",
+    "description": "Silvia, la signora che abita vicino al pozzo a sud, ha bisogno di aiuto, per ulteriori dettagli parlare con Silvia a casa sua.",
+    "type": "secondary",
+    "giver": "Gilda",
+    "questLocation": "Casa di Silvia",
+    "objectives": [
+      {
+        "text": "Recati a casa di Silvia e ottieni ulteriori informazioni.",
+        "max": 0
+      },
+      {
+        "text": "Annaffia le piante all'esterno e prepare un secchio d'acqua di scorta utilizzando il pozzo",
+        "max": 3
+      },
+      {
+        "text": "Fai rapporto a silvia per ricevere il certificato di completamento",
+        "max": 0
+      },
+      {
+        "text": "Fai rapporto alla gilda per concludere la quest e ottenere la ricompensa",
+        "max": 0
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "La tua prima vera missione",
+    "description": "Il tuo maestro ti ha detto di ripulire la cantina infestata dai ratti della locanda",
+    "type": "main",
+    "giver": "Maestro",
+    "questLocation": "Cantina della locanda",
+    "objectives": [
+      {
+        "text": "Raggiungi la cantina ed elimina i ratti al suo interno",
+        "max": 5
+      },
+      {
+        "text": "La parete è crollata, sembra esserci un passaggio, indaga su dove conduce",
+        "max": 0
+      },
+      {
+        "text": "Sembra che i ratti provenissero da questa caverna, eliminali tutti e poi fai rapporto",
+        "max": 5
+      },
+      {
+        "text": "Indaga sui rumori di combattimento provenienti dall'esterno",
+        "max": 0
+      },
+      {
+        "text": "Un mercante sta venendo attaccato dai banditi, elimina i banditi",
+        "max": 3
+      },
+      { "text": "Soccorri il mercante", "max": 0 },
+      {
+        "text": "Fai rapporto al tuo maestro sull'esito della missione",
+        "max": 0
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Addestramento da avventuriero",
+    "description": "Ti attende una settimana di addestramento dopo l'accaduto, puoi addestrarti con il tuo maestro nella caverna sotto la locanda o accettare delle quest al bancone della gilda.",
+    "type": "main",
+    "giver": "Maestro",
+    "questLocation": "Locanda e Caverna",
+    "objectives": [
+      { "text": "Completa il tuo addestramento per 5 giorni", "max": 5 },
+      {
+        "text": "Il tuo maestro ti attende nella caverna per un addestramento speciale",
+        "max": 0
+      },
+      { "text": "Sconfiggi il tuo compagno di addestramento", "max": 0 }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Il villaggio è sotto attacco!",
+    "description": "Il villaggio è stato attaccato durante il tuo allenamento, respingi i nemici!",
+    "type": "main",
+    "giver": "Maestro",
+    "questLocation": "Villaggio",
+    "objectives": [
+      {
+        "text": "Respingi i mostri che hanno attaccato il villaggio",
+        "max": 11
+      },
+      {
+        "text": "Sconfiggi il comandante nemico!",
+        "max": 1
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Rumori sospetti dalla caverna",
+    "description": "Uno dei cacciatori ha scoperto una caverna a sud del Bosco di Sunset, è richiesto l'intervento di un avventuriero per investigare",
+    "type": "secondary",
+    "giver": "Gilda",
+    "questLocation": "Caverna a sud del Bosco",
+    "objectives": [
+      { "text": "Recati alla posizione segnalata dai cacciatori", "max": 0 },
+      {
+        "text": "Sconfiggi i ratti all'esterno e dentro la caverna",
+        "max": 17
+      },
+      {
+        "text": "Fai rapporto alla gilda per riscuote la ricompensa e concludere la giornata",
+        "max": 0
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Banditi avvistati vicino al villaggio",
+    "description": "E' stato notato del fumo in lontananza nei pressi del fiume a est del Bosco di Sunset. Qualcuno dovrebbe intervenire",
+    "type": "secondary",
+    "giver": "Gilda",
+    "questLocation": "Direzione Est nel Bosco di Sunset",
+    "objectives": [
+      { "text": "Raggiungi il fiume per indagare", "max": 0 },
+      {
+        "text": "Elimina tutti i banditi che si sono accampati lungo il fiume",
+        "max": 19
+      },
+      {
+        "text": "Elimina il capo dei banditi nell'area più a sud del campo",
+        "max": 1
+      },
+      {
+        "text": "Fai rapporto alla gilda per riscuote la ricompensa e concludere la giornata",
+        "max": 0
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Rovine misteriose",
+    "description": "E' stato scoperto una rovina nel Bosco di Sunset, sembra comparsa dal nulla... si richiede l'intervento della gilda per indagare",
+    "type": "secondary",
+    "giver": "Gilda",
+    "questLocation": "Rovina a sud del Bosco di Sunset",
+    "objectives": [
+      { "text": "Recati a sud del Bosco di Sunset", "max": 0 },
+      {
+        "text": "Elimina i non-morti che infestano il cimitero",
+        "max": 14
+      },
+      { "text": "Esplora il mausoleo", "max": 0 },
+      { "text": "Elimina i non-morti che infestano il mausoleo", "max": 4 },
+      {
+        "text": "Fai rapporto alla gilda per riscuote la ricompensa e concludere la giornata"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Il primo addestramento",
+    "description": "Il tuo maestro ti attende nella caverna sotto la locanda per cominciare il tuo primo addestramento da avventuriero",
+    "type": "secondary",
+    "giver": "Maestro",
+    "questLocation": "Caverna sotto la locanda",
+    "objectives": [
+      {
+        "text": "Raggiungi il tuo maestro nella caverna sotto la locanda",
+        "max": 0
+      },
+      { "text": "Elimina i manichini", "max": 6 },
+      {
+        "text": "Avvisa il tuo maestro che hai finito l'esercizio e concludi la giornata",
+        "max": 0
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Il secondo addestramento",
+    "description": "Il tuo maestro ti attende nella caverna sotto la locanda per cominciare il tuo secondo addestramento da avventuriero",
+    "type": "secondary",
+    "giver": "Maestro",
+    "questLocation": "Caverna sotto la locanda",
+    "objectives": [
+      {
+        "text": "Raggiungi il tuo maestro nella caverna sotto la locanda",
+        "max": 0
+      },
+      { "text": "Elimina le bestie che il tuo maestro ha preparato", "max": 6 },
+      {
+        "text": "Avvisa il tuo maestro che hai finito l'esercizio e concludi la giornata",
+        "max": 0
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Ripulire la caverna a sud",
+    "description": "La caverna a sud del Bosco di Sunset è stata occupata di nuovo, occorre l'intervento della gilda",
+    "type": "secondary",
+    "giver": "Gilda",
+    "repeatable": true,
+    "questLocation": "Caverna a sud del Bosco",
+    "objectives": [
+      { "text": "Raggiungi la caverna", "max": 0 },
+      {
+        "text": "Sconfiggi i ratti all'esterno e dentro la caverna",
+        "max": 17
+      },
+      {
+        "text": "Fai rapporto alla gilda per riscuote la ricompensa e concludere la giornata",
+        "max": 0
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Rimuovere l'accampamento dei banditi",
+    "description": "TODO",
+    "type": "secondary",
+    "giver": "Gilda",
+    "repeatable": true,
+    "questLocation": "Direzione Est nel Bosco di Sunset",
+    "objectives": [
+      { "text": "Raggiungi l'accampamento lungo il fiume", "max": 0 },
+      {
+        "text": "Sconfiggi i banditi nell'accampamento",
+        "max": 19
+      },
+      {
+        "text": "Elimina il capo dei banditi nell'area più a sud del campo",
+        "max": 1
+      },
+      {
+        "text": "Fai rapporto alla gilda per riscuote la ricompensa e concludere la giornata",
+        "max": 0
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Ripulire il cimitero nel bosco",
+    "description": "TODO",
+    "giver": "Gilda",
+    "repeatable": true,
+    "questLocation": "Rovina a sud del Bosco di Sunset",
+    "objectives": [
+      { "text": "Raggiungi il cimitero", "max": 0 },
+      {
+        "text": "Elimina i non-morti che infestano il cimitero",
+        "max": 14
+      },
+      {
+        "text": "Elimina i non-morti che infestano il mausoleo",
+        "max": 4
+      },
+      {
+        "text": "Fai rapporto alla gilda per riscuote la ricompensa e concludere la giornata",
         "max": 0
       }
     ]
