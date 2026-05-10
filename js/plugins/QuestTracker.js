@@ -143,6 +143,7 @@
     this.setTrackedQuest(quest.id);
     const scene = SceneManager._scene;
     //might become a BUG
+    //logically should display the quest tracker window in the moment you accept a new quest
     if (!scene._questTrackerWindow) scene.createQuestTrackerWindow();
   };
 
@@ -308,8 +309,80 @@
 
   Window_QuestList.prototype.initialize = function (rect) {
     Window_Selectable.prototype.initialize.call(this, rect);
+    this.setCursorRect(0, 0, 0, 0);
     this._category = "none";
     this._data = [];
+  };
+
+  //check if the current item selected is a header or not
+  Window_QuestList.prototype.isHeader = function (index) {
+    const item = this.questAt(index);
+    return item && item.header;
+  };
+
+  //read movement downwards
+  Window_QuestList.prototype.cursorDown = function (wrap) {
+    let index = this.index();
+
+    do {
+      index++;
+
+      if (index >= this.maxItems()) {
+        if (wrap) {
+          index = 0;
+        } else {
+          index = this.maxItems() - 1;
+          break;
+        }
+      }
+    } while (this.isHeader(index));
+
+    this.select(index);
+  };
+
+  //read movement upwards
+  Window_QuestList.prototype.cursorUp = function (wrap) {
+    let index = this.index();
+
+    do {
+      index--;
+
+      if (index < 0) {
+        if (wrap) {
+          index = this.maxItems() - 1;
+        } else {
+          index = 0;
+          break;
+        }
+      }
+    } while (this.isHeader(index));
+
+    this.select(index);
+  };
+
+  //remove the background from each quest title in the list
+  Window_QuestList.prototype.drawItemBackground = function (index) {
+    // Do nothing
+  };
+
+  Window_QuestList.prototype.refreshCursor = function () {
+    if (this.index() < 0) {
+      this.setCursorRect(0, 0, 0, 0);
+      return;
+    }
+
+    const item = this.questAt(this.index());
+
+    // Hide cursor on headers
+    if (item && item.header) {
+      this.setCursorRect(0, 0, 0, 0);
+      return;
+    }
+
+    const rect = this.itemRect(this.index());
+
+    // Slight inset for cleaner UI
+    this.setCursorRect(rect.x + 4, rect.y + 2, rect.width - 8, rect.height - 4);
   };
 
   Window_QuestList.prototype.setCategory = function (category) {
@@ -347,8 +420,13 @@
     //estrai tutte le quest primarie
     const mainQuests = quests.filter((q) => q.type === "main");
 
-    //estrai tutte le quest secondarie
-    const secondaryQuests = quests.filter((q) => q.type === "secondary");
+    //estrai tutte le quest secondarie eccetto le ripetibili
+    const secondaryQuests = quests.filter(
+      (q) => q.type === "secondary" && !q.repeatable,
+    );
+
+    //estrae le quest ripetibili
+    const repeatableQuests = quests.filter((q) => q.repeatable);
 
     //se c'è delle quest primarie, crea il primo elemento come titolo e poi aggiungi le quest primarie
     if (mainQuests.length > 0) {
@@ -368,6 +446,15 @@
       });
 
       this._data.push(...secondaryQuests);
+    }
+    //se c'è delle ripetibili, crea l'header for le ripetibili e poi aggiunge le quest ripetibili
+    if (repeatableQuests.length > 0) {
+      this._data.push({
+        header: true,
+        title: "Ripetibili",
+      });
+
+      this._data.push(...repeatableQuests);
     }
   };
 
@@ -392,7 +479,15 @@
 
     //HEADER
     if (quest.header) {
-      this.changeTextColor(ColorManager.systemColor());
+      //define the color based on which header is it
+      const color =
+        quest.title === "Principali"
+          ? 5
+          : quest.title === "Secondarie"
+            ? 12
+            : 10;
+      //change title color
+      this.changeTextColor(ColorManager.textColor(color));
       this.contents.fontBold = true;
       this.contents.fontSize = 20;
 
@@ -401,6 +496,16 @@
       this.contents.fontBold = false;
       this.resetFontSettings();
       this.resetTextColor();
+
+      //change underline color
+      this.contents.paintOpacity = 255;
+      this.contents.fillRect(
+        rect.x,
+        rect.y + rect.height - 2,
+        rect.width,
+        2,
+        ColorManager.textColor(3),
+      );
       return;
     }
 
@@ -526,9 +631,11 @@
     let y = 0;
     const width = this.contents.width;
     const MAX_WIDTH = Graphics.boxWidth / 2 - 10;
+    const GAP_TEXT = 1.5;
+    const GAP_BLOCKS = 0.8;
 
     //Nome Quest
-    this.contents.fontSize = 20;
+    this.contents.fontSize = 21;
     const linesTitle = wrapText(
       this._quest.name.toUpperCase(),
       MAX_WIDTH,
@@ -538,15 +645,52 @@
     linesTitle.forEach((line, i) => {
       this.changeTextColor(ColorManager.systemColor());
       this.drawText(line.trim(), x, y, MAX_WIDTH);
-      if (linesTitle.length > i + 1) y += this.lineHeight() / 1.5;
-      else y += this.lineHeight() / 1.2;
+      if (linesTitle.length > i + 1) y += this.lineHeight() / GAP_TEXT;
+      else y += this.lineHeight() / GAP_BLOCKS;
     });
 
+    //add the rectangle with ripetibile
+    const TextQuestActiveWidth =
+      this.contents.measureTextWidth(" QUEST ATTIVA ") - 40;
+    const TextQuestRepeatWidth =
+      this.contents.measureTextWidth(" Ripetibile ") - 30;
+
+    if (this._quest.repeatable) {
+      this.contents.fontSize = 15;
+      this.contents.fillRect(
+        x,
+        y,
+        TextQuestRepeatWidth,
+        this.itemHeight(),
+        "rgba(0,50,150,1)",
+      );
+      this.changeTextColor(ColorManager.textColor(5));
+      this.drawText(" Ripetibile", x, y, TextQuestRepeatWidth);
+    }
+
+    //Draw the "QUEST ATTIVA" block
     const tracked = $gameSystem.getTrackedQuest();
     if (this._quest.id === tracked) {
-      this.contents.fontSize = 19;
+      this.contents.fontSize = 15;
+      this.contents.fillRect(
+        x + this._quest.repeatable ? TextQuestRepeatWidth + 10 : 0,
+        y,
+        TextQuestActiveWidth,
+        this.itemHeight(),
+        " rgba(0, 50, 0, 1)",
+      );
+
       this.changeTextColor(ColorManager.textColor(3));
-      this.drawText("QUEST ATTIVA", x, y, width);
+      this.drawText(
+        " QUEST ATTIVA",
+        x + this._quest.repeatable ? TextQuestRepeatWidth + 10 : 0,
+        y,
+        TextQuestActiveWidth,
+      );
+    }
+
+    //if either is the tracked quest or a repeatable type add a gap
+    if (this._quest.repeatable || this._quest.id === tracked) {
       y += this.lineHeight();
     }
     //Giver
@@ -575,8 +719,8 @@
 
     linesDescription.forEach((line, i) => {
       this.drawText(line.trim(), x, y, MAX_WIDTH);
-      if (linesDescription.length > i + 1) y += this.lineHeight() / 1.5;
-      else y += this.lineHeight() / 1.2;
+      if (linesDescription.length > i + 1) y += this.lineHeight() / GAP_TEXT;
+      else y += this.lineHeight() / GAP_BLOCKS;
     });
 
     // Objectives
@@ -606,9 +750,9 @@
         text = "✔ " + text;
         const linesObjective = wrapText(text, MAX_WIDTH, this);
         linesObjective.forEach((line, i) => {
-          this.drawText(line.trim(), x + 10, y, MAX_WIDTH);
-          if (linesObjective.length > i + 1) y += this.lineHeight() / 1.5;
-          else y += this.lineHeight() / 1.2;
+          this.drawText(line.trim(), x + 5, y, MAX_WIDTH);
+          if (linesObjective.length > i + 1) y += this.lineHeight() / GAP_TEXT;
+          else y += this.lineHeight() / GAP_BLOCKS;
         });
       } else {
         //if the next step is not displayed it will draw it and set the variable to true to prevent the logic to draw all the successive step before the current one is completed
@@ -619,9 +763,10 @@
           text = "• " + text;
           const linesObjective = wrapText(text, MAX_WIDTH, this);
           linesObjective.forEach((line, i) => {
-            this.drawText(line.trim(), x + 10, y, MAX_WIDTH);
-            if (linesObjective.length > i + 1) y += this.lineHeight() / 1.5;
-            else y += this.lineHeight() / 1.2;
+            this.drawText(line.trim(), x + 5, y, MAX_WIDTH);
+            if (linesObjective.length > i + 1)
+              y += this.lineHeight() / GAP_TEXT;
+            else y += this.lineHeight() / GAP_BLOCKS;
           });
           displayedStepToDo = true;
         }
@@ -747,7 +892,7 @@ Scene_Map.prototype.createAllWindows = function () {
 };
 
 Scene_Map.prototype.createQuestTrackerWindow = function () {
-  const rect = new Rectangle(0, 0, 300, 160);
+  const rect = new Rectangle(0, 0, 300, 60);
   this._questTrackerWindow = new Window_QuestTracker(rect);
   this.addWindow(this._questTrackerWindow);
 };
@@ -765,6 +910,50 @@ Window_QuestTracker.prototype.constructor = Window_QuestTracker;
 Window_QuestTracker.prototype.initialize = function (rect) {
   Window_Base.prototype.initialize.call(this, rect);
   this.refresh();
+};
+
+Window_QuestTracker.prototype.fittingHeightToText = function () {
+  const trackedId = $gameSystem.getTrackedQuest();
+  if (trackedId === null) return this.fittingHeight(1);
+
+  const quest = $gameSystem.getQuests("active").find((q) => q.id === trackedId);
+
+  if (!quest) return this.fittingHeight(1);
+
+  const MAX_WIDTH = this.contentsWidth();
+
+  let lines = 0;
+
+  // TITLE
+  this.contents.fontSize = 18;
+
+  const titleLines = wrapText(quest.name, MAX_WIDTH, this);
+
+  lines += titleLines.length;
+
+  // CURRENT OBJECTIVE
+  const obj = quest.objectives.find((o) => !o.done);
+
+  if (obj) {
+    this.contents.fontSize = 16;
+
+    let text = obj.text;
+
+    if (obj.max) {
+      text += ` (${obj.progress}/${obj.max})`;
+    }
+
+    const objectiveLines = wrapText(text, MAX_WIDTH, this);
+
+    lines += objectiveLines.length;
+  }
+
+  this.resetFontSettings();
+
+  // + padding lines
+  lines += 1;
+
+  return this.fittingHeight(lines);
 };
 
 Window_QuestTracker.prototype.update = function () {
@@ -795,6 +984,13 @@ Window_QuestTracker.prototype.update = function () {
 };
 
 Window_QuestTracker.prototype.refresh = function () {
+  const newHeight = this.fittingHeightToText();
+  if (this.height !== newHeight) {
+    // the divide by 3 and the moltiplication by 2 are the closest that it can get to a perfect fit for the height, normaly it would be double the needed height otherwise.
+    this.height = (newHeight / 3) * 2;
+    this.createContents();
+  }
+
   this.contents.clear();
   const MAX_WIDTH = 300;
 
@@ -846,7 +1042,7 @@ function wrapText(text, maxWidth, window) {
   const words = text.split(" ");
   const lines = [];
   let currentLine = "";
-
+  maxWidth -= 10;
   for (const word of words) {
     const testLine = currentLine + word + " ";
 
