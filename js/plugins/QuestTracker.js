@@ -11,6 +11,14 @@
  * @type number
  * @default 0
  *
+ * @command hideShowQuest
+ * @desc Hides a shown quest or shows a hidden quest in the quest log.
+ * @text Hide/Show Quest
+ *
+ * @arg questId
+ * @type number
+ * @default 0
+ *
  * @command updateObjective
  * @text Update Objective
  * @desc Update the objective of the quest specified ID, it takes a questId, objectiveIndex, value
@@ -51,6 +59,7 @@
       id: Number(q.id),
       name: q.name,
       repeatable: q.repeatable || false,
+      hidden: false,
       type: q.type || "secondary",
       description: q.description,
       giver: q.giver,
@@ -77,6 +86,11 @@
   PluginManager.registerCommand(PLUGIN_NAME, "addQuest", (args) => {
     const id = Number(args.id);
     $gameSystem.startQuest(id);
+  });
+
+  PluginManager.registerCommand(PLUGIN_NAME, "hideShowQuest", (args) => {
+    const id = Number(args.id);
+    $gameSystem.hideShowQuest(id);
   });
 
   PluginManager.registerCommand(PLUGIN_NAME, "updateObjective", (args) => {
@@ -126,6 +140,7 @@
     const quest = {
       id: base.id,
       name: base.name,
+      hidden: base.hidden || false,
       repeatable: base.repeatable || false,
       type: base.type || "secondary",
       description: base.description,
@@ -156,6 +171,16 @@
   //add a quest to the _quest.active
   Game_System.prototype.addQuest = function (quest) {
     this._quests.active.push(quest);
+  };
+
+  Game_System.prototype.getQuestById = function (questId) {
+    const quest = this._quest.filter((q) => q.id === questId);
+    return quest;
+  };
+
+  Game_System.prototype.hideShowQuest = function (questId) {
+    const quest = this._quest.getQuestById(questId);
+    quest.hidden = !quest.hidden;
   };
 
   //identify the completed quest in the active array, remove it and push it inside the complete quests array
@@ -903,7 +928,8 @@ Scene_Map.prototype.createAllWindows = function () {
 };
 
 Scene_Map.prototype.createQuestTrackerWindow = function () {
-  const rect = new Rectangle(0, 0, 300, 60);
+  //y = 50 so that it won't cover the name of the map whenever you enter a new one
+  const rect = new Rectangle(0, 50, 300, 60);
   this._questTrackerWindow = new Window_QuestTracker(rect);
   this.addWindow(this._questTrackerWindow);
 };
@@ -920,6 +946,7 @@ Window_QuestTracker.prototype.constructor = Window_QuestTracker;
 
 Window_QuestTracker.prototype.initialize = function (rect) {
   Window_Base.prototype.initialize.call(this, rect);
+
   this.refresh();
 };
 
@@ -1003,7 +1030,7 @@ Window_QuestTracker.prototype.refresh = function () {
   }
 
   this.contents.clear();
-  const MAX_WIDTH = 300;
+  const MAX_WIDTH = this.innerWidth || 300;
 
   const trackedId = $gameSystem.getTrackedQuest();
   if (trackedId === null) return;

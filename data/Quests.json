@@ -149,7 +149,7 @@
     "objectives": [
       {
         "text": "Respingi i mostri che hanno attaccato il villaggio",
-        "max": 11
+        "max": 12
       },
       {
         "text": "Sconfiggi il comandante nemico!",
@@ -324,5 +324,14 @@
         "max": 0
       }
     ]
+  },
+  {
+    "id": 16,
+    "name": "Fine contenuti storia",
+    "description": "Al momento la storia si conclude qui, è possibile continuare a giocare facendo le missioni ripetibili della gilda, ma c'è la possibilità che al momento dell'aggiornamento i progressi ottenuti saranno persi...",
+    "giver": "Autore",
+    "questLocation": "Game",
+    "hidden": true,
+    "objectives": [{ "text": "Questo è tutto per ora..", "max": 0 }]
   }
 ]
